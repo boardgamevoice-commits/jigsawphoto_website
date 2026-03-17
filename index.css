@@ -99,6 +99,7 @@ nav a:hover {
     margin-bottom: 1.5rem;
     background: linear-gradient(to right, #fff, var(--accent));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
