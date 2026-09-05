@@ -6,6 +6,7 @@
     <title>JigShare (拼图快传) - Social Photo Puzzle Game</title>
     <meta name="description" content="Turn your photos into fun, social jigsaw puzzles. JigShare is the premium grid-swap puzzle game for iOS.">
     <meta name="google-site-verification" content="QUrjwu28XT4ruwdatMFQxrZIwa5PXv5KGJY-EDPl6_U" />
+    <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -14,27 +15,32 @@
             <div class="logo">
                 <img src="assets/icon.png" alt="JigShare Logo">
                 <span>JigShare</span>
+                <span class="version-pill">v1.0.3 · iOS 17+</span>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                    <li><a href="mailto:fangdev1063@gmail.com">Support</a></li>
+                    <li><a href="#features" data-i18n="navFeatures">Features</a></li>
+                    <li><a href="#puzzle-lab" data-i18n="navDemo">Play Mini</a></li>
+                    <li><a href="privacy.html" data-i18n="navPrivacy">Privacy</a></li>
+                    <li><a href="terms.html" data-i18n="navTerms">Terms</a></li>
                 </ul>
             </nav>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <button id="langToggle" class="lang-btn">中文</button>
+            </div>
         </header>
 
         <section class="hero">
             <div class="hero-content">
-                <h1>Snap.<br>Swap.<br>Socialize.</h1>
-                <p>The premium grid-swap jigsaw game for iOS. Turn your photos into instant challenges, swap pieces with precision, and master the grid in a bold Pop Art experience.</p>
+                <h1 data-i18n="heroTitle">Snap.<br>Swap.<br>Socialize.</h1>
+                <p data-i18n="heroSubtitle">The premium grid-swap jigsaw game for iOS. Turn your photos into instant challenges, swap pieces with precision, and master the grid in a bold Pop Art experience.</p>
                 <div class="hero-btns">
-                    <a href="https://apps.apple.com/us/app/jigshare-photo-jigsaw-puzzle/id6760682088" class="btn-primary">
+                    <a href="https://apps.apple.com/us/app/jigshare-photo-jigsaw-puzzle/id6760682088" target="_blank" rel="noopener" class="btn-primary">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5,12.5a.5.5,0,0,1-.5-.5,4.71,4.71,0,0,0-4.69-4.74h-.07a4.67,4.67,0,0,0-4.66,4.07,3,3,0,0,1,0,5.86,4.67,4.67,0,0,0,4.66,4.07h.07A4.71,4.71,0,0,0,17,16.5a.5.5,0,0,1,1,0,5.72,5.72,0,0,1-5.69,5.74h-.07a5.68,5.68,0,0,1-5.65-4.57,4,4,0,0,1,0-7.34,5.68,5.68,0,0,1,5.65-4.57h.07A5.72,5.72,0,0,1,18,11.5a.5.5,0,0,1-.5.5Z"/></svg>
-                        Get on App Store
+                        <span data-i18n="btnAppStore">Get on App Store</span>
                     </a>
-                    <a href="#features" class="btn-secondary">
-                        View Features
+                    <a href="#puzzle-lab" class="btn-secondary" data-i18n="btnTryDemo">
+                        Try Mini Swap
                     </a>
                 </div>
             </div>
@@ -43,27 +49,44 @@
             </div>
         </section>
 
+        <!-- Interactive 3x3 Mini Puzzle Demo -->
+        <section class="puzzle-section" id="puzzle-lab">
+            <div class="puzzle-box">
+                <div class="puzzle-header">
+                    <h3 data-i18n="puzzleTitle">⚡ Pop Art Grid Swap Demo</h3>
+                    <p data-i18n="puzzleSubtitle">Tap any two pieces to swap them into numerical order (1 to 9)!</p>
+                </div>
+                <div class="puzzle-grid" id="puzzleGrid">
+                    <!-- Populated by JavaScript -->
+                </div>
+                <div class="puzzle-controls">
+                    <button class="btn-shuffle" id="btnShufflePuzzle" data-i18n="btnShuffleText">🎲 Shuffle Grid</button>
+                    <span id="puzzleWinBadge" style="display: none; font-weight: 900; color: var(--pop-green); font-size: 1.2rem; align-self: center;" data-i18n="puzzleSolved">🎉 SOLVED! Pop Art Master!</span>
+                </div>
+            </div>
+        </section>
+
         <section id="features" class="features">
             <div class="section-title">
-                <h2>The Ultimate Grid Challenge</h2>
-                <p>Experience the most intuitive and social photo puzzle game ever built.</p>
+                <h2 data-i18n="featHeader">The Ultimate Grid Challenge</h2>
+                <p data-i18n="featSubHeader">Experience the most intuitive and social photo puzzle game ever built.</p>
             </div>
             <div class="feature-grid">
                 <div class="feature-card pop-card">
-                    <h3>Grid-Swap Mastery</h3>
-                    <p>No more messy dragging. Swap pieces with a single tap. Precision-engineered for speed and tactile satisfaction.</p>
+                    <h3 data-i18n="f1Title">Grid-Swap Mastery</h3>
+                    <p data-i18n="f1Desc">No more messy dragging. Swap pieces with a single tap. Precision-engineered for speed and tactile satisfaction.</p>
                 </div>
                 <div class="feature-card pop-card">
-                    <h3>Multi-Photo Packs</h3>
-                    <p>Level up your game with multi-layered challenges. Sequence up to 5 photos into a single "Pack" for the ultimate test.</p>
+                    <h3 data-i18n="f2Title">Multi-Photo Packs</h3>
+                    <p data-i18n="f2Desc">Level up your game with multi-layered challenges. Sequence up to 5 photos into a single "Pack" for the ultimate test.</p>
                 </div>
                 <div class="feature-card pop-card">
-                    <h3>Magic Hint & AI</h3>
-                    <p>Stuck? The Magic Wand uses smart positioning to guide you. From Rookie to Hell mode, there's a challenge for everyone.</p>
+                    <h3 data-i18n="f3Title">Magic Hint & AI</h3>
+                    <p data-i18n="f3Desc">Stuck? The Magic Wand uses smart positioning to guide you. From Rookie to Hell mode, there's a challenge for everyone.</p>
                 </div>
                 <div class="feature-card pop-card">
-                    <h3>Privacy & Guest Mode</h3>
-                    <p>No account? No problem. Play locally in Guest Mode. Cloud challenges use Safe Search and auto-delete after 7 days.</p>
+                    <h3 data-i18n="f4Title">Privacy & Guest Mode</h3>
+                    <p data-i18n="f4Desc">No account? No problem. Play locally in Guest Mode. Cloud challenges use Safe Search and auto-delete after 7 days.</p>
                 </div>
             </div>
         </section>
@@ -74,13 +97,168 @@
                 <span>JigShare (拼图快传)</span>
             </div>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="mailto:fangdev1063@gmail.com">Contact Support</a>
+                <a href="index.html" data-i18n="navHome">Home</a>
+                <a href="privacy.html" data-i18n="navPrivacy">Privacy Policy</a>
+                <a href="terms.html" data-i18n="navTerms">Terms of Service</a>
+                <a href="app-ads.txt">app-ads.txt</a>
+                <a href="mailto:fangdev1063@gmail.com" data-i18n="navSupport">Support</a>
             </div>
-            <p>&copy; 2026 JigShare. All rights reserved.</p>
+            <p style="text-align: center; font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">
+                &copy; 2026 JigShare · All rights reserved. App Store ID: 6760682088.
+            </p>
         </footer>
     </div>
+
+    <!-- Bilingual & Mini Puzzle Script -->
+    <script>
+        const i18n = {
+            en: {
+                navFeatures: "Features",
+                navDemo: "Play Mini",
+                navPrivacy: "Privacy",
+                navTerms: "Terms",
+                navHome: "Home",
+                navSupport: "Support",
+                heroTitle: "Snap.<br>Swap.<br>Socialize.",
+                heroSubtitle: "The premium grid-swap jigsaw game for iOS. Turn your photos into instant challenges, swap pieces with precision, and master the grid in a bold Pop Art experience.",
+                btnAppStore: "Get on App Store",
+                btnTryDemo: "Try Mini Swap",
+                puzzleTitle: "⚡ Pop Art Grid Swap Demo",
+                puzzleSubtitle: "Tap any two pieces to swap them into numerical order (1 to 9)!",
+                btnShuffleText: "🎲 Shuffle Grid",
+                puzzleSolved: "🎉 SOLVED! Pop Art Master!",
+                featHeader: "The Ultimate Grid Challenge",
+                featSubHeader: "Experience the most intuitive and social photo puzzle game ever built.",
+                f1Title: "Grid-Swap Mastery",
+                f1Desc: "No more messy dragging. Swap pieces with a single tap. Precision-engineered for speed and tactile satisfaction.",
+                f2Title: "Multi-Photo Packs",
+                f2Desc: "Level up your game with multi-layered challenges. Sequence up to 5 photos into a single 'Pack' for the ultimate test.",
+                f3Title: "Magic Hint & AI",
+                f3Desc: "Stuck? The Magic Wand uses smart positioning to guide you. From Rookie to Hell mode, there's a challenge for everyone.",
+                f4Title: "Privacy & Guest Mode",
+                f4Desc: "No account? No problem. Play locally in Guest Mode. Cloud challenges use Safe Search and auto-delete after 7 days."
+            },
+            zh: {
+                navFeatures: "特色玩法",
+                navDemo: "在线试玩",
+                navPrivacy: "隐私政策",
+                navTerms: "服务条款",
+                navHome: "首页",
+                navSupport: "技术支持",
+                heroTitle: "拍立得.<br>指尖换位.<br>玩转社交.",
+                heroSubtitle: "专为 iOS 打造的高质感波普艺术拼图游戏。将相册照片瞬间化为九宫格挑战，一指轻触优雅换位，在绚丽撞色中重燃拼图乐趣。",
+                btnAppStore: "前往 App Store 下载",
+                btnTryDemo: "体验网格拼图",
+                puzzleTitle: "⚡ 波普网格点触换位试玩",
+                puzzleSubtitle: "轻触任意两块碎片互相交换位置，还原 1 到 9 序号即可通关！",
+                btnShuffleText: "🎲 打乱九宫格",
+                puzzleSolved: "🎉 恭喜拼图完成！波普艺术大师！",
+                featHeader: "重新定义网格拼图体验",
+                featSubHeader: "告别拖拽凌乱，享受最直观敏捷的社交照片拼图乐趣。",
+                f1Title: "轻触换位掌控",
+                f1Desc: "告别手指拖拽遮挡视线的痛点。单手轻点两块图块即可瞬时对调，尽享指尖触觉反馈与快节奏拼图爽感。",
+                f2Title: "多图组连环挑战",
+                f2Desc: "支持最多 5 张照片打包生成连续解谜关卡，为好友或情侣打造属于你们的专属回忆照片谜题。",
+                f3Title: "智能魔棒位置提示",
+                f3Desc: "卡壳了？智能魔棒为您指引关键图块归位。从休闲萌新到地狱模式，满足各类拼图高手挑战欲。",
+                f4Title: "游客模式与离线沙盒",
+                f4Desc: "无需强制登录账号，支持全本地游客单机畅玩。云端挑战支持安全筛查且 7 天自动销毁，坚决捍卫隐私。"
+            }
+        };
+
+        let currentLang = 'en';
+        const langBtn = document.getElementById('langToggle');
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            langBtn.textContent = lang === 'en' ? '中文' : 'English';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.innerHTML = i18n[lang][key];
+                }
+            });
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        }
+
+        langBtn.addEventListener('click', () => {
+            updateLanguage(currentLang === 'en' ? 'zh' : 'en');
+        });
+
+        // Interactive 3x3 Swap Puzzle
+        const tilesData = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const colors = ['#FFDE59', '#FF3131', '#00E5FF', '#7ED957', '#FF914D', '#FFFFFF', '#00E5FF', '#FF3131', '#FFDE59'];
+        let currentTiles = [2, 1, 4, 3, 6, 5, 8, 7, 9]; // initial scrambled
+        let selectedIdx = null;
+
+        const gridEl = document.getElementById('puzzleGrid');
+        const winBadge = document.getElementById('puzzleWinBadge');
+        const btnShuffle = document.getElementById('btnShufflePuzzle');
+
+        let audioCtx = null;
+        function playTileClick(swap) {
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(swap ? 587.33 : 440, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.13);
+            } catch (e) {}
+        }
+
+        function checkWin() {
+            const isWon = currentTiles.every((val, idx) => val === idx + 1);
+            winBadge.style.display = isWon ? 'inline' : 'none';
+        }
+
+        function renderGrid() {
+            gridEl.innerHTML = '';
+            currentTiles.forEach((num, idx) => {
+                const tile = document.createElement('div');
+                tile.className = 'puzzle-tile' + (selectedIdx === idx ? ' selected' : '');
+                tile.style.backgroundColor = colors[num - 1];
+                tile.textContent = num;
+
+                tile.addEventListener('click', () => {
+                    if (selectedIdx === null) {
+                        selectedIdx = idx;
+                        playTileClick(false);
+                        renderGrid();
+                    } else if (selectedIdx === idx) {
+                        selectedIdx = null;
+                        renderGrid();
+                    } else {
+                        // Swap
+                        const temp = currentTiles[selectedIdx];
+                        currentTiles[selectedIdx] = currentTiles[idx];
+                        currentTiles[idx] = temp;
+                        selectedIdx = null;
+                        playTileClick(true);
+                        renderGrid();
+                        checkWin();
+                    }
+                });
+
+                gridEl.appendChild(tile);
+            });
+        }
+
+        btnShuffle.addEventListener('click', () => {
+            currentTiles.sort(() => Math.random() - 0.5);
+            selectedIdx = null;
+            winBadge.style.display = 'none';
+            playTileClick(true);
+            renderGrid();
+        });
+
+        renderGrid();
+    </script>
 </body>
 </html>

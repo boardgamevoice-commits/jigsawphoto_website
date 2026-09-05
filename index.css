@@ -298,3 +298,132 @@ footer {
         max-width: 100%;
     }
 }
+
+/* Version Pill & Language Button */
+.version-pill {
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 3px 8px;
+    background: var(--pop-cyan);
+    border: 2px solid var(--stroke);
+    box-shadow: 2px 2px 0 var(--stroke);
+    border-radius: 6px;
+    margin-left: 8px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.lang-btn {
+    background: var(--pop-white);
+    border: 3px solid var(--stroke);
+    box-shadow: 3px 3px 0 var(--stroke);
+    font-weight: 900;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.lang-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--stroke);
+    background: var(--pop-yellow);
+}
+
+/* Interactive 3x3 Pop Art Puzzle Section */
+.puzzle-section {
+    padding: 5rem 0;
+}
+
+.puzzle-box {
+    background: var(--pop-white);
+    border: var(--border-width) solid var(--stroke);
+    box-shadow: 8px 8px 0 var(--stroke);
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.puzzle-header {
+    margin-bottom: 1.5rem;
+}
+
+.puzzle-header h3 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--pop-red);
+}
+
+.puzzle-header p {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 360px;
+    margin: 0 auto 1.5rem;
+    background: var(--stroke);
+    padding: 8px;
+    border: 3px solid var(--stroke);
+    border-radius: 12px;
+}
+
+.puzzle-tile {
+    aspect-ratio: 1;
+    background: var(--pop-cyan);
+    border: 3px solid var(--stroke);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+    box-shadow: 2px 2px 0 var(--stroke);
+}
+
+.puzzle-tile.selected {
+    background: var(--pop-yellow);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 3px var(--pop-red);
+}
+
+.puzzle-tile:hover {
+    filter: brightness(1.05);
+}
+
+.puzzle-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-shuffle {
+    background: var(--pop-orange);
+    color: var(--text-black);
+    border: 3px solid var(--stroke);
+    box-shadow: 3px 3px 0 var(--stroke);
+    font-weight: 900;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-shuffle:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--stroke);
+}
+
