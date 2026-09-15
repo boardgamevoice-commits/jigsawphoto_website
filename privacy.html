@@ -3,81 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - JigShare</title>
+    <title>Privacy Policy - JigShare: Photo Jigsaw Puzzle</title>
+    <meta name="description" content="Official Privacy Policy for JigShare: Photo Jigsaw Puzzle on iOS. Details on on-device processing, AdMob compliance, 7-day cloud auto-deletion, and guest mode.">
+    <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header>
-            <a href="index.html" class="logo">
-                <img src="assets/icon.png" alt="JigShare Logo">
-                <span>JigShare</span>
+            <a href="index.html" class="nav-brand">
+                <div class="logo-wrap">
+                    <img src="assets/icon.png" alt="JigShare Logo" class="logo-img">
+                </div>
+                <div>
+                    <span class="logo-title">JigShare</span>
+                    <span class="version-pill">Privacy & Security</span>
+                </div>
             </a>
+
             <nav>
                 <ul>
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                    <li><a href="mailto:fangdev1063@gmail.com">Support</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#demo-lab">Play Demo</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="mailto:fangdev1063@gmail.com">Contact Support</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-icon-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+                    <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+                </button>
+            </div>
         </header>
 
         <section class="content-page">
             <h1>Privacy Policy</h1>
+            <p style="font-weight: 700; color: var(--text-muted);">Last Updated: September 15, 2026 · Effective for JigShare iOS (v1.0.3+)</p>
+
             <div class="content-block pop-card">
-                <h2>Our Commitment</h2>
-                <p>We believe that your personal photos are your business. JigShare is built with a "Privacy First" approach. While we provide cloud features for social play, your photos remain secure, and their lifecycle in the cloud is strictly limited and audited.</p>
+                <h2>1. Our Privacy Philosophy: Privacy First & Local Execution</h2>
+                <p>
+                    At <strong>JigShare</strong> (developed by the JigShare team), we believe that your memories and personal photographs belong exclusively to you. The app is engineered around on-device local execution, sandboxed storage, and zero-knowledge architecture. You can enjoy the complete single-player puzzle experience without ever creating an account or logging in.
+                </p>
             </div>
 
             <div class="content-block pop-card">
-                <h2>Local Processing & Guest Mode</h2>
-                <p>When you play locally or use <strong>Guest Mode</strong>, JigShare processes all images on your device. We do not collect personal data, account information, or photos when you are not using cloud features. You can enjoy the full puzzle experience without ever signing in.</p>
+                <h2>2. Local Processing & Device Sandbox</h2>
+                <p>
+                    When selecting images from your camera roll or snapping new pictures within the app:
+                </p>
                 <ul>
-                    <li><strong>No Server Uploads:</strong> Local puzzles are never transmitted to our servers.</li>
-                    <li><strong>Sandboxed Data:</strong> Game history and settings are stored locally in your app's secure sandbox.</li>
+                    <li><strong>On-Device Slicing:</strong> Photos are segmented into grid pieces entirely within local device memory using CoreGraphics and Metal. Raw photo data is never uploaded to any remote server for standard local play.</li>
+                    <li><strong>Apple Privacy Manifest Declaration:</strong> In compliance with Apple's iOS 17+ Privacy Manifest guidelines (<code>PrivacyInfo.xcprivacy</code>), we access required APIs strictly for non-tracking system operations:
+                        <ul>
+                            <li><code>UserDefaults</code> (CA92.1): Preserving your game sound preference, daily streak counter, and unlocked difficulty levels locally.</li>
+                            <li><code>FileTimestamp</code> (C617.1) & <code>DiskSpace</code> (E174.1): Managing temporary image cache limits to prevent device storage exhaustion.</li>
+                            <li><code>SystemBootTime</code> (35F9.1): Calculating high-precision game timers (10Hz) for anti-cheat verification.</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
             <div class="content-block pop-card">
-                <h2>Social Sharing & Cloud (7-Day TTL)</h2>
-                <p>JigShare allows you to share challenges via <strong>Universal Links</strong> or <strong>.jig files</strong>. When you create a cloud challenge, the photo and metadata are uploaded to our secure Firebase storage. To protect your privacy:</p>
+                <h2>3. Social Challenge Sharing & 7-Day Auto-Deletion (TTL)</h2>
+                <p>
+                    JigShare offers optional peer-to-peer challenge sharing via <strong>Universal Links</strong> and offline <code>.jig</code> files. When you explicitly choose to create a cloud challenge:
+                </p>
                 <ul>
-                    <li><strong>7-Day Lifecycle:</strong> All uploaded challenges and photos are automatically and physically deleted from our servers after <strong>7 days</strong> (1 week).</li>
-                    <li><strong>Safe Search Audit:</strong> All shared images are audited via Google Cloud Vision API to ensure safety before they are visible to recipients.</li>
-                    <li><strong>Private Sharing:</strong> Challenges are point-to-point. We do not provide a public feed or social square for your photos.</li>
+                    <li><strong>Strict 7-Day Lifecycle (TTL):</strong> All uploaded challenge puzzle images and associated metadata are programmatically purged and permanently deleted from our servers after exactly <strong>7 days</strong> via automated hourly background cleanups.</li>
+                    <li><strong>Automated AI SafeSearch Moderation:</strong> To ensure community safety and comply with App Store Guideline 1.2, all shared challenge images are screened automatically via <strong>Google Cloud Vision AI SafeSearch</strong> before becoming accessible to challenge recipients.</li>
+                    <li><strong>No Public Gallery:</strong> Challenge links are private point-to-point invites. We never publish or expose your photos to public social feeds or discovery tabs.</li>
                 </ul>
             </div>
 
             <div class="content-block pop-card">
-                <h2>Firebase Integration</h2>
-                <p>We use <strong>Firebase</strong> for authentication, leaderboards, and notifications (FCM). Your account is anchored by Apple Sign-In, which shares only a unique, anonymous User ID (UID) with us, keeping your real identity completely hidden.</p>
+                <h2>4. Google Mobile Ads (AdMob) & App Tracking Transparency (ATT)</h2>
+                <p>
+                    JigShare uses Google Mobile Ads SDK (v13.9.0) to display occasional banner and reward advertisements that support free gameplay:
+                </p>
+                <ul>
+                    <li><strong>Explicit ATT Consent Prompt:</strong> In accordance with Apple's App Tracking Transparency (ATT) framework, JigShare asks for your explicit permission before any advertising tracking occurs. If you choose "Ask App not to Track", Google Mobile Ads will strictly serve contextual, non-personalized advertisements.</li>
+                    <li><strong>SKAdNetwork 4.0 Compliance:</strong> We maintain complete SKAdNetwork identifiers for Google and its verified third-party demand partners, ensuring privacy-preserving ad attribution without fingerprinting or cross-site user identification.</li>
+                    <li><strong>Authorized Sellers (app-ads.txt):</strong> In accordance with IAB guidelines, our official authorized digital sellers file is accessible at <a href="/app-ads.txt" style="color: var(--pop-red); font-weight: 800;">https://jigsawphoto.netlify.app/app-ads.txt</a>.</li>
+                </ul>
             </div>
 
             <div class="content-block pop-card">
-                <h2>No Third-Party Tracking</h2>
-                <p>JigShare does not use any advertising identifiers (IDFA) or third-party marketing trackers. We only use technical identifiers to maintain your competitive ranking and deliver challenges you've been invited to.</p>
+                <h2>5. Sign in with Apple & Account Erasure</h2>
+                <p>
+                    For cloud challenge synchronization and cross-device leaderboard scoring, users may optionally authenticate via <strong>Sign in with Apple</strong>:
+                </p>
+                <ul>
+                    <li>Only an anonymous, random Apple User Identifier (UID) is stored. Your real email address and full name are never required or collected.</li>
+                    <li><strong>Instant Account Deletion (Guideline 5.1.1(v)):</strong> You may initiate instant, irreversible account deletion directly inside the app under <em>Settings &gt; Account &gt; Delete Account</em>. All associated cloud data is purged immediately upon confirmation.</li>
+                </ul>
             </div>
 
             <div class="content-block pop-card">
-                <h2>Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy or our app, please contact us at:</p>
-                <p><strong>Email:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--secondary);">fangdev1063@gmail.com</a></p>
+                <h2>6. Children’s Online Privacy Protection (COPPA & GDPR)</h2>
+                <p>
+                    JigShare does not knowingly collect personally identifiable information from children under the age of 13 (or under 16 in the EEA). Because local guest play requires no login, children can enjoy photo puzzles safely in offline mode.
+                </p>
+            </div>
+
+            <div class="content-block pop-card">
+                <h2>7. Contact the Data Protection Lead</h2>
+                <p>
+                    If you have questions, feedback, or requests regarding this Privacy Policy or your personal data rights, please contact our lead developer directly:
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Developer Contact:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--pop-red); font-weight: 800;">fangdev1063@gmail.com</a><br>
+                    <strong>Official App Store ID:</strong> <code>6760682088</code>
+                </p>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
-            <div class="logo footer-logo">
-                <img src="assets/icon.png" alt="JigShare Logo">
-                <span>JigShare (拼图快传)</span>
+            <div class="nav-brand">
+                <img src="assets/icon.png" alt="JigShare Logo" class="logo-img" style="width: 44px; height: 44px;">
+                <span class="logo-title" style="font-size: 1.5rem;">JigShare (拼图快传)</span>
             </div>
-            <div class="footer-links">
+
+            <div class="footer-nav">
                 <a href="index.html">Home</a>
+                <a href="index.html#demo-lab">Play Demo</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="mailto:fangdev1063@gmail.com">Contact Support</a>
+                <a href="app-ads.txt">app-ads.txt</a>
+                <a href="mailto:fangdev1063@gmail.com">Support</a>
             </div>
-            <p>&copy; 2026 JigShare. All rights reserved.</p>
+
+            <div class="footer-meta">
+                <p>&copy; 2026 JigShare: Photo Jigsaw Puzzle · All rights reserved.</p>
+                <p>Apple App Store ID: <strong>6760682088</strong> · Support: <strong>fangdev1063@gmail.com</strong></p>
+            </div>
         </footer>
     </div>
+
+    <!-- Theme Sync Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark';
+            }
+            localStorage.setItem('jigshare_theme', theme);
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        const savedTheme = localStorage.getItem('jigshare_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+    </script>
 </body>
 </html>

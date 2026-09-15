@@ -3,175 +3,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JigShare (拼图快传) - Social Photo Puzzle Game</title>
-    <meta name="description" content="Turn your photos into fun, social jigsaw puzzles. JigShare is the premium grid-swap puzzle game for iOS.">
+    <title>JigShare: Photo Jigsaw Puzzle - Pop Art Picture Challenges</title>
+    <meta name="description" content="Turn your photos into vibrant Pop Art jigsaw puzzles. Play Daily Puzzles, challenge friends with custom .jig packs, and earn retro Polaroid cards on iOS.">
+    <meta name="keywords" content="photo puzzle,jigsaw puzzle,picture puzzle,pop art puzzle,custom puzzle,daily challenge,friend challenge,brain teaser,asmr puzzle,polaroid card">
     <meta name="google-site-verification" content="QUrjwu28XT4ruwdatMFQxrZIwa5PXv5KGJY-EDPl6_U" />
+    
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JigShare: Photo Jigsaw Puzzle">
+    <meta property="og:description" content="Turn your memories into vibrant Pop Art jigsaw puzzles. Fast grid-swapping, daily challenges, retro Polaroid cards, and tactile ASMR audio.">
+    <meta property="og:image" content="assets/icon.png">
+    <meta property="og:url" content="https://jigsawphoto.netlify.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JigShare: Photo Jigsaw Puzzle">
+    <meta name="twitter:description" content="Turn your memories into vibrant Pop Art jigsaw puzzles on iOS.">
+    <meta name="twitter:image" content="assets/icon.png">
+
     <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="apple-touch-icon" href="assets/icon.png">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header>
-            <div class="logo">
-                <img src="assets/icon.png" alt="JigShare Logo">
-                <span>JigShare</span>
-                <span class="version-pill">v1.0.3 · iOS 17+</span>
-            </div>
+            <a href="index.html" class="nav-brand">
+                <div class="logo-wrap">
+                    <img src="assets/icon.png" alt="JigShare Logo" class="logo-img">
+                </div>
+                <div>
+                    <span class="logo-title">JigShare</span>
+                    <span class="version-pill">v1.0.3 · iOS 17+</span>
+                </div>
+            </a>
+
             <nav>
                 <ul>
+                    <li><a href="#demo-lab" data-i18n="navDemo">Play Demo</a></li>
                     <li><a href="#features" data-i18n="navFeatures">Features</a></li>
-                    <li><a href="#puzzle-lab" data-i18n="navDemo">Play Mini</a></li>
+                    <li><a href="#daily-mode" data-i18n="navDaily">Daily Puzzle</a></li>
                     <li><a href="privacy.html" data-i18n="navPrivacy">Privacy</a></li>
                     <li><a href="terms.html" data-i18n="navTerms">Terms</a></li>
                 </ul>
             </nav>
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <button id="langToggle" class="lang-btn">中文</button>
+
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-icon-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+                    <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+                </button>
+                <button id="langToggle" class="btn-icon-toggle" title="Switch Language" aria-label="Switch Language">
+                    🌐 <span>中文</span>
+                </button>
+                <a href="https://apps.apple.com/us/app/jigshare-photo-jigsaw-puzzle/id6760682088" target="_blank" rel="noopener" class="btn-primary" style="padding: 0.65rem 1.25rem; font-size: 0.95rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5,12.5a.5.5,0,0,1-.5-.5,4.71,4.71,0,0,0-4.69-4.74h-.07a4.67,4.67,0,0,0-4.66,4.07,3,3,0,0,1,0,5.86,4.67,4.67,0,0,0,4.66,4.07h.07A4.71,4.71,0,0,0,17,16.5a.5.5,0,0,1,1,0,5.72,5.72,0,0,1-5.69,5.74h-.07a5.68,5.68,0,0,1-5.65-4.57,4,4,0,0,1,0-7.34,5.68,5.68,0,0,1,5.65-4.57h.07A5.72,5.72,0,0,1,18,11.5a.5.5,0,0,1-.5.5Z"/></svg>
+                    <span data-i18n="navDownload">App Store</span>
+                </a>
             </div>
         </header>
 
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1 data-i18n="heroTitle">Snap.<br>Swap.<br>Socialize.</h1>
-                <p data-i18n="heroSubtitle">The premium grid-swap jigsaw game for iOS. Turn your photos into instant challenges, swap pieces with precision, and master the grid in a bold Pop Art experience.</p>
-                <div class="hero-btns">
+                <div class="hero-tag">
+                    <span>⚡</span>
+                    <span data-i18n="heroTag">Pop Art Picture Challenges · v1.0.3</span>
+                </div>
+                <h1>
+                    <span data-i18n="heroTitlePart1">Snap. Swap.</span><br>
+                    <span class="highlight" data-i18n="heroTitlePart2">POP ART MAGIC.</span>
+                </h1>
+                <p class="hero-lead" data-i18n="heroSubtitle">
+                    Turn your favourite camera photos into instant Pop Art jigsaw puzzles! Play the brand-new Daily Puzzle streak, swap pieces with tactile ASMR sound, and export collectible retro Polaroid cards.
+                </p>
+
+                <div class="hero-badges">
+                    <span class="badge-item badge-daily" data-i18n="badgeDaily">🗓️ Daily Puzzle Streaks</span>
+                    <span class="badge-item badge-polaroid" data-i18n="badgePolaroid">📸 Retro Polaroid Postcards</span>
+                    <span class="badge-item badge-asmr" data-i18n="badgeAsmr">🎵 Tactile ASMR Audio</span>
+                </div>
+
+                <div class="hero-actions">
                     <a href="https://apps.apple.com/us/app/jigshare-photo-jigsaw-puzzle/id6760682088" target="_blank" rel="noopener" class="btn-primary">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5,12.5a.5.5,0,0,1-.5-.5,4.71,4.71,0,0,0-4.69-4.74h-.07a4.67,4.67,0,0,0-4.66,4.07,3,3,0,0,1,0,5.86,4.67,4.67,0,0,0,4.66,4.07h.07A4.71,4.71,0,0,0,17,16.5a.5.5,0,0,1,1,0,5.72,5.72,0,0,1-5.69,5.74h-.07a5.68,5.68,0,0,1-5.65-4.57,4,4,0,0,1,0-7.34,5.68,5.68,0,0,1,5.65-4.57h.07A5.72,5.72,0,0,1,18,11.5a.5.5,0,0,1-.5.5Z"/></svg>
-                        <span data-i18n="btnAppStore">Get on App Store</span>
+                        <span data-i18n="btnAppStore">Download on App Store</span>
                     </a>
-                    <a href="#puzzle-lab" class="btn-secondary" data-i18n="btnTryDemo">
-                        Try Mini Swap
+                    <a href="#demo-lab" class="btn-secondary" data-i18n="btnTryDemo">
+                        <span>⚡</span> <span data-i18n="btnTryDemoText">Play Live Demo</span>
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="assets/hero.png" alt="JigShare Pop Art Interface">
-            </div>
-        </section>
 
-        <!-- Interactive 3x3 Mini Puzzle Demo -->
-        <section class="puzzle-section" id="puzzle-lab">
-            <div class="puzzle-box">
-                <div class="puzzle-header">
-                    <h3 data-i18n="puzzleTitle">⚡ Pop Art Grid Swap Demo</h3>
-                    <p data-i18n="puzzleSubtitle">Tap any two pieces to swap them into numerical order (1 to 9)!</p>
-                </div>
-                <div class="puzzle-grid" id="puzzleGrid">
-                    <!-- Populated by JavaScript -->
-                </div>
-                <div class="puzzle-controls">
-                    <button class="btn-shuffle" id="btnShufflePuzzle" data-i18n="btnShuffleText">🎲 Shuffle Grid</button>
-                    <span id="puzzleWinBadge" style="display: none; font-weight: 900; color: var(--pop-green); font-size: 1.2rem; align-self: center;" data-i18n="puzzleSolved">🎉 SOLVED! Pop Art Master!</span>
+            <div class="hero-visual-wrap">
+                <div class="hero-visual-card">
+                    <img src="assets/hero.png" alt="JigShare Pop Art Interface" class="hero-visual-img">
+                    <div class="hero-floating-sticker">
+                        <span>🔥</span>
+                        <span data-i18n="stickerText">1-Tap Fast Swap</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
-            <div class="section-title">
-                <h2 data-i18n="featHeader">The Ultimate Grid Challenge</h2>
-                <p data-i18n="featSubHeader">Experience the most intuitive and social photo puzzle game ever built.</p>
+        <!-- Interactive Photo Jigsaw & Polaroid Lab -->
+        <section class="section-wrapper" id="demo-lab">
+            <div class="section-head">
+                <div class="section-tag" data-i18n="labTag">Interactive Experience</div>
+                <h2 class="section-title" data-i18n="labTitle">Living Pop Art Jigsaw Lab</h2>
+                <p class="section-subtitle" data-i18n="labSubtitle">Select any official photo preset or upload your own picture. Tap any two tiles to swap positions, listen to satisfying ASMR clicks, and unlock your Retro Polaroid card!</p>
             </div>
+
+            <div class="lab-container">
+                <!-- Left: Puzzle Playing Canvas -->
+                <div class="lab-panel-left">
+                    <div class="lab-toolbar">
+                        <div class="preset-selector">
+                            <span class="preset-label" data-i18n="presetLabel">Photo:</span>
+                            <button class="btn-preset active" data-img="assets/demo/tokyo.jpg" data-i18n="pTokyo">🏙️ Tokyo</button>
+                            <button class="btn-preset" data-img="assets/demo/kitten.jpg" data-i18n="pKitten">🐱 Kitten</button>
+                            <button class="btn-preset" data-img="assets/demo/golden.jpg" data-i18n="pGolden">🐶 Puppy</button>
+                            <button class="btn-preset" data-img="assets/demo/vintage.jpg" data-i18n="pVintage">🎞️ Vintage</button>
+                            <label class="btn-preset btn-custom-upload" title="Upload custom photo">
+                                <span>📁</span> <span data-i18n="pUpload">Upload</span>
+                                <input type="file" id="customImgUpload" accept="image/*">
+                            </label>
+                        </div>
+
+                        <div class="lab-mode-toggles">
+                            <button class="toggle-chip active" id="btnGrid3" data-grid="3">3×3</button>
+                            <button class="toggle-chip" id="btnGrid4" data-grid="4">4×4</button>
+                            <button class="toggle-chip" id="btnSoundToggle" title="Toggle Sound">🔊 ASMR ON</button>
+                        </div>
+                    </div>
+
+                    <!-- Puzzle Board Frame -->
+                    <div class="puzzle-board-wrap">
+                        <div class="puzzle-board grid-3" id="puzzleBoard">
+                            <!-- Injected by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Bottom Controls & Counters -->
+                    <div class="lab-controls-bar">
+                        <div class="lab-stats-group">
+                            <div class="stat-item">
+                                <span class="stat-label" data-i18n="statMoves">Moves</span>
+                                <span class="stat-val" id="valMoves">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" data-i18n="statTime">Time</span>
+                                <span class="stat-val" id="valTimer">00:00</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" data-i18n="statStatus">Status</span>
+                                <span class="stat-val" id="valStatus" style="font-size: 1.1rem; color: var(--pop-orange);" data-i18n="statusPlaying">In Progress</span>
+                            </div>
+                        </div>
+
+                        <div class="lab-actions-group">
+                            <button class="btn-lab-action" id="btnShuffle" data-i18n="btnShuffle">🎲 Shuffle</button>
+                            <button class="btn-lab-action" id="btnReset" data-i18n="btnReset">🔄 Solve/Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Polaroid Victory Card Generator Showcase -->
+                <div class="lab-panel-right">
+                    <div class="polaroid-wrapper" id="polaroidCard">
+                        <div class="polaroid-tape" data-i18n="polaroidTape">JIGSHARE • POP ART EDITION</div>
+                        <div class="polaroid-photo-frame">
+                            <img src="assets/demo/tokyo.jpg" id="polaroidImg" alt="Polaroid Preview" class="polaroid-img-preview">
+                            <div class="polaroid-stamp perfect-fit" id="polaroidStampBadge" data-i18n="stampPerfect">PERFECT FIT</div>
+                        </div>
+                        <div class="polaroid-footer">
+                            <div class="polaroid-meta">
+                                <div class="polaroid-title" id="polaroidCardTitle">TOKYO NEON</div>
+                                <div class="polaroid-stats-line" id="polaroidStatsText">GRID: 3×3 · MOVES: 0 · 00:00</div>
+                                <div class="polaroid-stats-line" id="polaroidDateText">DATE: 2026-09-15</div>
+                            </div>
+                            <div class="polaroid-barcode-box">
+                                <div class="barcode-stripes">
+                                    <div class="b-bar" style="width: 2px;"></div>
+                                    <div class="b-bar" style="width: 1px;"></div>
+                                    <div class="b-bar" style="width: 3px;"></div>
+                                    <div class="b-bar" style="width: 1px;"></div>
+                                    <div class="b-bar" style="width: 2px;"></div>
+                                    <div class="b-bar" style="width: 4px;"></div>
+                                    <div class="b-bar" style="width: 1px;"></div>
+                                    <div class="b-bar" style="width: 2px;"></div>
+                                    <div class="b-bar" style="width: 1px;"></div>
+                                    <div class="b-bar" style="width: 3px;"></div>
+                                    <div class="b-bar" style="width: 2px;"></div>
+                                    <div class="b-bar" style="width: 1px;"></div>
+                                </div>
+                                <div class="barcode-text">#JIG-6760682088</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="polaroid-download-wrap">
+                        <button class="btn-download-polaroid" id="btnDownloadPolaroid">
+                            <span>📸</span> <span data-i18n="btnSavePolaroid">Save Retro Polaroid Postcard</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Puzzle & Streak Spotlight -->
+        <section class="section-wrapper" id="daily-mode">
+            <div class="spotlight-box">
+                <div class="spotlight-text">
+                    <div class="section-tag" style="background: var(--pop-orange); align-self: flex-start;" data-i18n="dailyTag">v1.0.3 Major Feature</div>
+                    <h3 data-i18n="dailyTitle">Daily Brain Gym & Streak Calendar</h3>
+                    <p data-i18n="dailyDesc">
+                        Never run out of inspiration. Every single midnight, JigShare drops an exclusive daily featured puzzle. Solve it, rack up your consecutive streak calendar, earn bonus skill points, and share your personalized daily postcard with friends!
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <span class="badge-item badge-daily">🔥 7-Day Streak Multiplier</span>
+                        <span class="badge-item badge-polaroid">✨ Exclusive Daily Stamp</span>
+                    </div>
+                </div>
+
+                <div class="streak-card-graphic">
+                    <div class="streak-header">
+                        <div style="font-weight: 900; font-size: 1.1rem;" data-i18n="streakTitle">SEPTEMBER 2026 STREAK</div>
+                        <div class="streak-counter-pill">🔥 14 DAYS</div>
+                    </div>
+                    <div class="streak-days-row">
+                        <div class="streak-day-box done"><span>MON</span><span>✓</span></div>
+                        <div class="streak-day-box done"><span>TUE</span><span>✓</span></div>
+                        <div class="streak-day-box done"><span>WED</span><span>✓</span></div>
+                        <div class="streak-day-box done"><span>THU</span><span>✓</span></div>
+                        <div class="streak-day-box done"><span>FRI</span><span>✓</span></div>
+                        <div class="streak-day-box done"><span>SAT</span><span>✓</span></div>
+                        <div class="streak-day-box today"><span>SUN</span><span>★</span></div>
+                    </div>
+                    <p style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-align: center;" data-i18n="streakNote">
+                        Keep your mind sharp! Solve daily to unlock high-tier Pop Art badges and skill ranking.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Matrix -->
+        <section class="section-wrapper" id="features">
+            <div class="section-head">
+                <div class="section-tag" data-i18n="featTag">Crafted for iOS</div>
+                <h2 class="section-title" data-i18n="featHeader">Why You'll Love JigShare</h2>
+                <p class="section-subtitle" data-i18n="featSubtitle">Built from the ground up for tactile perfection, lightning speed, and joyful social competition.</p>
+            </div>
+
             <div class="feature-grid">
+                <!-- 1 -->
                 <div class="feature-card pop-card">
+                    <div class="feature-icon-box f-icon-yellow">⚡</div>
                     <h3 data-i18n="f1Title">Grid-Swap Mastery</h3>
-                    <p data-i18n="f1Desc">No more messy dragging. Swap pieces with a single tap. Precision-engineered for speed and tactile satisfaction.</p>
+                    <p data-i18n="f1Desc">No more clumsy dragging that blocks your screen. Tap any two tiles to instantaneously swap them with zero lag and tactile physics.</p>
                 </div>
+
+                <!-- 2 -->
                 <div class="feature-card pop-card">
-                    <h3 data-i18n="f2Title">Multi-Photo Packs</h3>
-                    <p data-i18n="f2Desc">Level up your game with multi-layered challenges. Sequence up to 5 photos into a single "Pack" for the ultimate test.</p>
+                    <div class="feature-icon-box f-icon-red">📸</div>
+                    <h3 data-i18n="f2Title">Photo-to-Puzzle Freedom</h3>
+                    <p data-i18n="f2Desc">Pick any picture from your photo library or snap on the fly. Play custom grids from 2×2 up to 9×9 with lossless original image restoration.</p>
                 </div>
+
+                <!-- 3 -->
                 <div class="feature-card pop-card">
-                    <h3 data-i18n="f3Title">Magic Hint & AI</h3>
-                    <p data-i18n="f3Desc">Stuck? The Magic Wand uses smart positioning to guide you. From Rookie to Hell mode, there's a challenge for everyone.</p>
+                    <div class="feature-icon-box f-icon-purple">🎵</div>
+                    <h3 data-i18n="f3Title">Tactile ASMR Sound</h3>
+                    <p data-i18n="f3Desc">Procedural acoustic synthesis gives each piece pick, swap, and lock a crisp, bubbly feedback that sounds as satisfying as bubble wrap.</p>
                 </div>
+
+                <!-- 4 -->
                 <div class="feature-card pop-card">
-                    <h3 data-i18n="f4Title">Privacy & Guest Mode</h3>
-                    <p data-i18n="f4Desc">No account? No problem. Play locally in Guest Mode. Cloud challenges use Safe Search and auto-delete after 7 days.</p>
+                    <div class="feature-icon-box f-icon-orange">📦</div>
+                    <h3 data-i18n="f4Title">Multi-Photo Packs & Flips</h3>
+                    <p data-i18n="f4Desc">Challenge your friends with up to 5-image challenge packs! Turn on 180° upside-down flips for the ultimate spatial orientation workout.</p>
+                </div>
+
+                <!-- 5 -->
+                <div class="feature-card pop-card">
+                    <div class="feature-icon-box f-icon-green">📮</div>
+                    <h3 data-i18n="f5Title">Retro Polaroid Export</h3>
+                    <p data-i18n="f5Desc">Every completed puzzle turns into an exclusive high-resolution Pop Art Polaroid card, complete with completion stats and souvenir stamps.</p>
+                </div>
+
+                <!-- 6 -->
+                <div class="feature-card pop-card">
+                    <div class="feature-icon-box f-icon-cyan">🛡️</div>
+                    <h3 data-i18n="f6Title">Guest Mode & AI Safety</h3>
+                    <p data-i18n="f6Desc">Zero forced account creation. Cloud challenge photos are audited by Google Cloud Vision AI SafeSearch and auto-deleted after 7 days.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
-            <div class="logo footer-logo">
-                <img src="assets/icon.png" alt="JigShare Logo">
-                <span>JigShare (拼图快传)</span>
+            <div class="nav-brand">
+                <img src="assets/icon.png" alt="JigShare Logo" class="logo-img" style="width: 44px; height: 44px;">
+                <span class="logo-title" style="font-size: 1.5rem;">JigShare (拼图快传)</span>
             </div>
-            <div class="footer-links">
+
+            <div class="footer-nav">
                 <a href="index.html" data-i18n="navHome">Home</a>
+                <a href="#demo-lab" data-i18n="navDemo">Play Demo</a>
+                <a href="#features" data-i18n="navFeatures">Features</a>
                 <a href="privacy.html" data-i18n="navPrivacy">Privacy Policy</a>
                 <a href="terms.html" data-i18n="navTerms">Terms of Service</a>
                 <a href="app-ads.txt">app-ads.txt</a>
                 <a href="mailto:fangdev1063@gmail.com" data-i18n="navSupport">Support</a>
             </div>
-            <p style="text-align: center; font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">
-                &copy; 2026 JigShare · All rights reserved. App Store ID: 6760682088.
-            </p>
+
+            <div class="footer-meta">
+                <p>&copy; 2026 JigShare: Photo Jigsaw Puzzle · All rights reserved.</p>
+                <p>Apple App Store ID: <strong>6760682088</strong> · Support: <strong>fangdev1063@gmail.com</strong></p>
+            </div>
         </footer>
     </div>
 
-    <!-- Bilingual & Mini Puzzle Script -->
+    <!-- Hidden Offscreen Canvas for Polaroid PNG Generation -->
+    <canvas id="polaroidExportCanvas" style="display: none;"></canvas>
+
+    <!-- Main Script: Bilingual, Theme, Web Audio ASMR, Jigsaw Engine, Polaroid Generator -->
     <script>
+        // ==========================================
+        // 1. Bilingual Translation Matrix
+        // ==========================================
         const i18n = {
             en: {
+                navDemo: "Play Demo",
                 navFeatures: "Features",
-                navDemo: "Play Mini",
+                navDaily: "Daily Puzzle",
                 navPrivacy: "Privacy",
                 navTerms: "Terms",
+                navDownload: "App Store",
                 navHome: "Home",
                 navSupport: "Support",
-                heroTitle: "Snap.<br>Swap.<br>Socialize.",
-                heroSubtitle: "The premium grid-swap jigsaw game for iOS. Turn your photos into instant challenges, swap pieces with precision, and master the grid in a bold Pop Art experience.",
-                btnAppStore: "Get on App Store",
-                btnTryDemo: "Try Mini Swap",
-                puzzleTitle: "⚡ Pop Art Grid Swap Demo",
-                puzzleSubtitle: "Tap any two pieces to swap them into numerical order (1 to 9)!",
-                btnShuffleText: "🎲 Shuffle Grid",
-                puzzleSolved: "🎉 SOLVED! Pop Art Master!",
-                featHeader: "The Ultimate Grid Challenge",
-                featSubHeader: "Experience the most intuitive and social photo puzzle game ever built.",
+                heroTag: "Pop Art Picture Challenges · v1.0.3",
+                heroTitlePart1: "Snap. Swap.",
+                heroTitlePart2: "POP ART MAGIC.",
+                heroSubtitle: "Turn your favourite camera photos into instant Pop Art jigsaw puzzles! Play the brand-new Daily Puzzle streak, swap pieces with tactile ASMR sound, and export collectible retro Polaroid cards.",
+                badgeDaily: "🗓️ Daily Puzzle Streaks",
+                badgePolaroid: "📸 Retro Polaroid Postcards",
+                badgeAsmr: "🎵 Tactile ASMR Audio",
+                btnAppStore: "Download on App Store",
+                btnTryDemo: "Play Live Demo",
+                btnTryDemoText: "Play Live Demo",
+                stickerText: "1-Tap Fast Swap",
+                labTag: "Interactive Experience",
+                labTitle: "Living Pop Art Jigsaw Lab",
+                labSubtitle: "Select any official photo preset or upload your own picture. Tap any two tiles to swap positions, listen to satisfying ASMR clicks, and unlock your Retro Polaroid card!",
+                presetLabel: "Photo:",
+                pTokyo: "🏙️ Tokyo",
+                pKitten: "🐱 Kitten",
+                pGolden: "🐶 Puppy",
+                pVintage: "🎞️ Vintage",
+                pUpload: "Upload",
+                statMoves: "Moves",
+                statTime: "Time",
+                statStatus: "Status",
+                statusPlaying: "In Progress",
+                statusSolved: "🎉 SOLVED!",
+                btnShuffle: "🎲 Shuffle",
+                btnReset: "🔄 Solve/Reset",
+                polaroidTape: "JIGSHARE • POP ART EDITION",
+                stampPerfect: "PERFECT FIT",
+                stampSpeed: "SPEED DEMON",
+                stampDaily: "DAILY SOLVER",
+                btnSavePolaroid: "Save Retro Polaroid Postcard",
+                dailyTag: "v1.0.3 Major Feature",
+                dailyTitle: "Daily Brain Gym & Streak Calendar",
+                dailyDesc: "Never run out of inspiration. Every single midnight, JigShare drops an exclusive daily featured puzzle. Solve it, rack up your consecutive streak calendar, earn bonus skill points, and share your personalized daily postcard with friends!",
+                streakTitle: "SEPTEMBER 2026 STREAK",
+                streakNote: "Keep your mind sharp! Solve daily to unlock high-tier Pop Art badges and skill ranking.",
+                featTag: "Crafted for iOS",
+                featHeader: "Why You'll Love JigShare",
+                featSubtitle: "Built from the ground up for tactile perfection, lightning speed, and joyful social competition.",
                 f1Title: "Grid-Swap Mastery",
-                f1Desc: "No more messy dragging. Swap pieces with a single tap. Precision-engineered for speed and tactile satisfaction.",
-                f2Title: "Multi-Photo Packs",
-                f2Desc: "Level up your game with multi-layered challenges. Sequence up to 5 photos into a single 'Pack' for the ultimate test.",
-                f3Title: "Magic Hint & AI",
-                f3Desc: "Stuck? The Magic Wand uses smart positioning to guide you. From Rookie to Hell mode, there's a challenge for everyone.",
-                f4Title: "Privacy & Guest Mode",
-                f4Desc: "No account? No problem. Play locally in Guest Mode. Cloud challenges use Safe Search and auto-delete after 7 days."
+                f1Desc: "No more clumsy dragging that blocks your screen. Tap any two tiles to instantaneously swap them with zero lag and tactile physics.",
+                f2Title: "Photo-to-Puzzle Freedom",
+                f2Desc: "Pick any picture from your photo library or snap on the fly. Play custom grids from 2×2 up to 9×9 with lossless original image restoration.",
+                f3Title: "Tactile ASMR Sound",
+                f3Desc: "Procedural acoustic synthesis gives each piece pick, swap, and lock a crisp, bubbly feedback that sounds as satisfying as bubble wrap.",
+                f4Title: "Multi-Photo Packs & Flips",
+                f4Desc: "Challenge your friends with up to 5-image challenge packs! Turn on 180° upside-down flips for the ultimate spatial orientation workout.",
+                f5Title: "Retro Polaroid Export",
+                f5Desc: "Every completed puzzle turns into an exclusive high-resolution Pop Art Polaroid card, complete with completion stats and souvenir stamps.",
+                f6Title: "Guest Mode & AI Safety",
+                f6Desc: "Zero forced account creation. Cloud challenge photos are audited by Google Cloud Vision AI SafeSearch and auto-deleted after 7 days."
             },
             zh: {
-                navFeatures: "特色玩法",
                 navDemo: "在线试玩",
+                navFeatures: "特色玩法",
+                navDaily: "每日打卡",
                 navPrivacy: "隐私政策",
                 navTerms: "服务条款",
+                navDownload: "前往下载",
                 navHome: "首页",
                 navSupport: "技术支持",
-                heroTitle: "拍立得.<br>指尖换位.<br>玩转社交.",
-                heroSubtitle: "专为 iOS 打造的高质感波普艺术拼图游戏。将相册照片瞬间化为九宫格挑战，一指轻触优雅换位，在绚丽撞色中重燃拼图乐趣。",
+                heroTag: "复古波普艺术照片拼图 · v1.0.3 全新升级",
+                heroTitlePart1: "拍照. 点触换位.",
+                heroTitlePart2: "波普艺术魔法.",
+                heroSubtitle: "把相册照片秒变超酷的波普艺术拼图！全新每日拼图打卡连胜上线，伴随清脆程序化 ASMR 音效指尖换位，通关即可导出专属复古拍立得打卡卡片。",
+                badgeDaily: "🗓️ 每日拼图打卡连胜",
+                badgePolaroid: "📸 复古拍立得打卡明信片",
+                badgeAsmr: "🎵 纯程序化合成 ASMR 音效",
                 btnAppStore: "前往 App Store 下载",
-                btnTryDemo: "体验网格拼图",
-                puzzleTitle: "⚡ 波普网格点触换位试玩",
-                puzzleSubtitle: "轻触任意两块碎片互相交换位置，还原 1 到 9 序号即可通关！",
-                btnShuffleText: "🎲 打乱九宫格",
-                puzzleSolved: "🎉 恭喜拼图完成！波普艺术大师！",
+                btnTryDemo: "立即试玩拼图",
+                btnTryDemoText: "立即试玩拼图",
+                stickerText: "单指轻触 快速换位",
+                labTag: "指尖交互实验室",
+                labTitle: "波普艺术拼图与拍立得实验室",
+                labSubtitle: "挑选官方精选图库或上传你的私藏照片。轻点任意两块碎片交换位置，感受清脆卡扣音效，通关即刻解锁专属复古拍立得打卡卡片！",
+                presetLabel: "选择图库:",
+                pTokyo: "🏙️ 东京夜景",
+                pKitten: "🐱 萌喵小猫",
+                pGolden: "🐶 金毛犬",
+                pVintage: "🎞️ 复古艺术",
+                pUpload: "自定义照片",
+                statMoves: "步数",
+                statTime: "耗时",
+                statStatus: "当前状态",
+                statusPlaying: "解谜挑战中",
+                statusSolved: "🎉 拼图完成！",
+                btnShuffle: "🎲 打乱重排",
+                btnReset: "🔄 还原/重置",
+                polaroidTape: "JIGSHARE • 波普艺术典藏版",
+                stampPerfect: "完美通关",
+                stampSpeed: "极速挑战者",
+                stampDaily: "每日解谜达人",
+                btnSavePolaroid: "一键导出复古拍立得明信片",
+                dailyTag: "v1.0.3 重磅核心玩法",
+                dailyTitle: "每日脑力健身房与连胜日历",
+                dailyDesc: "每天午夜零点，JigShare 精准推送一张全新每日特色拼图。解开谜题，在连胜日历上点亮连续打卡记录，赢取丰厚技能点奖励，一键向好友晒出属于你的每日专属战报！",
+                streakTitle: "2026 年 9 月 连续打卡日历",
+                streakNote: "坚持每日动脑！连续打卡解锁高段位波普勋章与全球技能点排位。",
+                featTag: "为 iOS 倾力打造",
                 featHeader: "重新定义网格拼图体验",
-                featSubHeader: "告别拖拽凌乱，享受最直观敏捷的社交照片拼图乐趣。",
+                featSubtitle: "从底层重新构筑：告别遮挡视线的拖拽，享受极致响应速度与社交解谜爽感。",
                 f1Title: "轻触换位掌控",
-                f1Desc: "告别手指拖拽遮挡视线的痛点。单手轻点两块图块即可瞬时对调，尽享指尖触觉反馈与快节奏拼图爽感。",
-                f2Title: "多图组连环挑战",
-                f2Desc: "支持最多 5 张照片打包生成连续解谜关卡，为好友或情侣打造属于你们的专属回忆照片谜题。",
-                f3Title: "智能魔棒位置提示",
-                f3Desc: "卡壳了？智能魔棒为您指引关键图块归位。从休闲萌新到地狱模式，满足各类拼图高手挑战欲。",
-                f4Title: "游客模式与离线沙盒",
-                f4Desc: "无需强制登录账号，支持全本地游客单机畅玩。云端挑战支持安全筛查且 7 天自动销毁，坚决捍卫隐私。"
+                f1Desc: "告别手指拖拽遮挡图块的烦恼。轻点任意两块图块即可瞬时对调，毫秒级响应，拼图手感行云流水。",
+                f2Title: "照片即刻成谜",
+                f2Desc: "随时随地选取相册任意照片或即时抓拍。支持 2×2 到 9×9 任意自由网格切割，通关后无损恢复高清原图画质。",
+                f3Title: "沉浸式 ASMR 音效",
+                f3Desc: "内置算法程序化合成的清脆音效：拿起气泡弹跳、对调卡扣扣合、归位清亮和弦，带来宛如捏泡泡纸般的减压体验。",
+                f4Title: "多图组连环挑战包",
+                f4Desc: "支持最多 5 张照片打包生成进阶挑战包！开启 180° 上下颠倒翻转机制，全面激活空间记忆与方向感知极限。",
+                f5Title: "复古拍立得打卡卡片",
+                f5Desc: "通关瞬间生成超清复古拍立得打卡卡片，印有通关时间、步数、专属纪念邮戳与条形码，一键保存至相册。",
+                f6Title: "全本地游客模式与安全",
+                f6Desc: "无需强制登录即可单机畅玩。云端挑战图片经由 Google Cloud Vision API 严格 AI 安全审核，并在 7 天后自动销毁。"
             }
         };
 
         let currentLang = 'en';
-        const langBtn = document.getElementById('langToggle');
+        const langToggleBtn = document.getElementById('langToggle');
 
-        function updateLanguage(lang) {
+        function setLanguage(lang) {
             currentLang = lang;
-            langBtn.textContent = lang === 'en' ? '中文' : 'English';
+            langToggleBtn.innerHTML = `🌐 <span>${lang === 'en' ? '中文' : 'English'}</span>`;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (i18n[lang] && i18n[lang][key]) {
@@ -179,86 +470,498 @@
                 }
             });
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            updatePolaroidMeta();
         }
 
-        langBtn.addEventListener('click', () => {
-            updateLanguage(currentLang === 'en' ? 'zh' : 'en');
+        langToggleBtn.addEventListener('click', () => {
+            setLanguage(currentLang === 'en' ? 'zh' : 'en');
         });
 
-        // Interactive 3x3 Swap Puzzle
-        const tilesData = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        const colors = ['#FFDE59', '#FF3131', '#00E5FF', '#7ED957', '#FF914D', '#FFFFFF', '#00E5FF', '#FF3131', '#FFDE59'];
-        let currentTiles = [2, 1, 4, 3, 6, 5, 8, 7, 9]; // initial scrambled
-        let selectedIdx = null;
+        // ==========================================
+        // 2. Dynamic Dark Neo-brutalist Theme Toggle
+        // ==========================================
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
 
-        const gridEl = document.getElementById('puzzleGrid');
-        const winBadge = document.getElementById('puzzleWinBadge');
-        const btnShuffle = document.getElementById('btnShufflePuzzle');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark';
+            }
+            localStorage.setItem('jigshare_theme', theme);
+        }
 
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // Init theme
+        const savedTheme = localStorage.getItem('jigshare_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+
+        // ==========================================
+        // 3. Procedural ASMR Sound Engine (Web Audio)
+        // Mimicking iOS SoundManager.swift
+        // ==========================================
+        let soundEnabled = true;
         let audioCtx = null;
-        function playTileClick(swap) {
-            try {
-                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                if (audioCtx.state === 'suspended') audioCtx.resume();
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(swap ? 587.33 : 440, audioCtx.currentTime);
-                gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.13);
-            } catch (e) {}
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        const Sound = {
+            select() {
+                if (!soundEnabled) return;
+                try {
+                    const ctx = getAudioContext();
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.type = 'sine';
+                    const now = ctx.currentTime;
+                    osc.frequency.setValueAtTime(440, now);
+                    osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+                    gain.gain.setValueAtTime(0.12, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+                    osc.start(now);
+                    osc.stop(now + 0.1);
+                } catch (e) {}
+            },
+            swap() {
+                if (!soundEnabled) return;
+                try {
+                    const ctx = getAudioContext();
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.type = 'triangle';
+                    const now = ctx.currentTime;
+                    osc.frequency.setValueAtTime(320, now);
+                    osc.frequency.exponentialRampToValueAtTime(580, now + 0.07);
+                    gain.gain.setValueAtTime(0.18, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                    osc.start(now);
+                    osc.stop(now + 0.09);
+                } catch (e) {}
+            },
+            lock() {
+                if (!soundEnabled) return;
+                try {
+                    const ctx = getAudioContext();
+                    const now = ctx.currentTime;
+                    [523.25, 659.25, 783.99].forEach((freq, i) => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freq, now + i * 0.03);
+                        gain.gain.setValueAtTime(0.08, now + i * 0.03);
+                        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.03 + 0.15);
+                        osc.start(now + i * 0.03);
+                        osc.stop(now + i * 0.03 + 0.16);
+                    });
+                } catch (e) {}
+            },
+            victory() {
+                if (!soundEnabled) return;
+                try {
+                    const ctx = getAudioContext();
+                    const now = ctx.currentTime;
+                    const chord = [523.25, 659.25, 783.99, 1046.50];
+                    chord.forEach((freq, idx) => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.type = 'triangle';
+                        osc.frequency.setValueAtTime(freq, now + idx * 0.06);
+                        gain.gain.setValueAtTime(0.15, now + idx * 0.06);
+                        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.06 + 0.4);
+                        osc.start(now + idx * 0.06);
+                        osc.stop(now + idx * 0.06 + 0.45);
+                    });
+                } catch (e) {}
+            }
+        };
+
+        const btnSoundToggle = document.getElementById('btnSoundToggle');
+        btnSoundToggle.addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            btnSoundToggle.textContent = soundEnabled ? '🔊 ASMR ON' : '🔇 ASMR OFF';
+            btnSoundToggle.classList.toggle('active', soundEnabled);
+        });
+
+        // ==========================================
+        // 4. Interactive Living Photo Jigsaw Engine
+        // ==========================================
+        let gridSize = 3; // 3x3 or 4x4
+        let currentImgSrc = 'assets/demo/tokyo.jpg';
+        let currentPhotoTitle = 'TOKYO NEON';
+        let tiles = []; // array of tile objects: { id, targetX, targetY }
+        let selectedTileIndex = null;
+        let moves = 0;
+        let timerSeconds = 0;
+        let timerInterval = null;
+        let isGameSolved = false;
+
+        const boardEl = document.getElementById('puzzleBoard');
+        const movesEl = document.getElementById('valMoves');
+        const timerEl = document.getElementById('valTimer');
+        const statusEl = document.getElementById('valStatus');
+        const polaroidImgEl = document.getElementById('polaroidImg');
+        const polaroidCardTitleEl = document.getElementById('polaroidCardTitle');
+        const polaroidStatsTextEl = document.getElementById('polaroidStatsText');
+        const polaroidStampBadgeEl = document.getElementById('polaroidStampBadge');
+        const polaroidDateTextEl = document.getElementById('polaroidDateText');
+
+        function formatTime(totalSecs) {
+            const m = Math.floor(totalSecs / 60).toString().padStart(2, '0');
+            const s = (totalSecs % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                timerEl.textContent = formatTime(timerSeconds);
+                updatePolaroidMeta();
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        function initTiles() {
+            const count = gridSize * gridSize;
+            tiles = [];
+            for (let i = 0; i < count; i++) {
+                const row = Math.floor(i / gridSize);
+                const col = i % gridSize;
+                tiles.push({
+                    id: i + 1,
+                    originRow: row,
+                    originCol: col
+                });
+            }
+        }
+
+        function shuffleTiles() {
+            // Fisher-Yates shuffle until not naturally solved
+            let count = tiles.length;
+            let attempts = 0;
+            do {
+                for (let i = count - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+                }
+                attempts++;
+            } while (checkSolvedSilent() && attempts < 10);
+
+            selectedTileIndex = null;
+            moves = 0;
+            timerSeconds = 0;
+            movesEl.textContent = '0';
+            timerEl.textContent = '00:00';
+            isGameSolved = false;
+            statusEl.textContent = i18n[currentLang].statusPlaying;
+            statusEl.style.color = 'var(--pop-orange)';
+            startTimer();
+            renderBoard();
+            updatePolaroidMeta();
+        }
+
+        function checkSolvedSilent() {
+            return tiles.every((tile, index) => tile.id === index + 1);
         }
 
         function checkWin() {
-            const isWon = currentTiles.every((val, idx) => val === idx + 1);
-            winBadge.style.display = isWon ? 'inline' : 'none';
+            if (checkSolvedSilent()) {
+                isGameSolved = true;
+                stopTimer();
+                Sound.victory();
+                statusEl.textContent = i18n[currentLang].statusSolved;
+                statusEl.style.color = 'var(--pop-green)';
+                
+                // Set stamp badge based on performance
+                if (timerSeconds < 45) {
+                    polaroidStampBadgeEl.textContent = i18n[currentLang].stampSpeed;
+                    polaroidStampBadgeEl.className = 'polaroid-stamp speed-demon';
+                } else {
+                    polaroidStampBadgeEl.textContent = i18n[currentLang].stampPerfect;
+                    polaroidStampBadgeEl.className = 'polaroid-stamp perfect-fit';
+                }
+                updatePolaroidMeta();
+            }
         }
 
-        function renderGrid() {
-            gridEl.innerHTML = '';
-            currentTiles.forEach((num, idx) => {
-                const tile = document.createElement('div');
-                tile.className = 'puzzle-tile' + (selectedIdx === idx ? ' selected' : '');
-                tile.style.backgroundColor = colors[num - 1];
-                tile.textContent = num;
+        function updatePolaroidMeta() {
+            polaroidImgEl.src = currentImgSrc;
+            polaroidCardTitleEl.textContent = currentPhotoTitle;
+            const timeStr = formatTime(timerSeconds);
+            polaroidStatsTextEl.textContent = `GRID: ${gridSize}×${gridSize} · MOVES: ${moves} · ${timeStr}`;
+            
+            const today = new Date().toISOString().split('T')[0];
+            polaroidDateTextEl.textContent = `DATE: ${today}`;
+        }
 
-                tile.addEventListener('click', () => {
-                    if (selectedIdx === null) {
-                        selectedIdx = idx;
-                        playTileClick(false);
-                        renderGrid();
-                    } else if (selectedIdx === idx) {
-                        selectedIdx = null;
-                        renderGrid();
-                    } else {
-                        // Swap
-                        const temp = currentTiles[selectedIdx];
-                        currentTiles[selectedIdx] = currentTiles[idx];
-                        currentTiles[idx] = temp;
-                        selectedIdx = null;
-                        playTileClick(true);
-                        renderGrid();
-                        checkWin();
-                    }
-                });
+        function renderBoard() {
+            boardEl.innerHTML = '';
+            boardEl.className = `puzzle-board grid-${gridSize}`;
 
-                gridEl.appendChild(tile);
+            const percentStep = 100 / (gridSize - 1);
+
+            tiles.forEach((tile, index) => {
+                const tileEl = document.createElement('div');
+                tileEl.className = 'puzzle-tile' + (selectedTileIndex === index ? ' selected' : '');
+                
+                // Calculate background position based on origin position
+                const bgX = tile.originCol * percentStep;
+                const bgY = tile.originRow * percentStep;
+
+                tileEl.style.backgroundImage = `url("${currentImgSrc}")`;
+                tileEl.style.backgroundSize = `${gridSize * 100}% ${gridSize * 100}%`;
+                tileEl.style.backgroundPosition = `${bgX}% ${bgY}%`;
+
+                // Badge showing tile piece ID
+                const badge = document.createElement('span');
+                badge.className = 'tile-number-badge';
+                badge.textContent = tile.id;
+                tileEl.appendChild(badge);
+
+                tileEl.addEventListener('click', () => onTileClick(index));
+                boardEl.appendChild(tileEl);
             });
         }
 
-        btnShuffle.addEventListener('click', () => {
-            currentTiles.sort(() => Math.random() - 0.5);
-            selectedIdx = null;
-            winBadge.style.display = 'none';
-            playTileClick(true);
-            renderGrid();
+        function onTileClick(index) {
+            if (isGameSolved) return;
+
+            if (selectedTileIndex === null) {
+                // Select first piece
+                selectedTileIndex = index;
+                Sound.select();
+                renderBoard();
+            } else if (selectedTileIndex === index) {
+                // Deselect
+                selectedTileIndex = null;
+                Sound.select();
+                renderBoard();
+            } else {
+                // Swap pieces
+                const temp = tiles[selectedTileIndex];
+                tiles[selectedTileIndex] = tiles[index];
+                tiles[index] = temp;
+                selectedTileIndex = null;
+                moves++;
+                movesEl.textContent = moves.toString();
+                Sound.swap();
+                renderBoard();
+                checkWin();
+                updatePolaroidMeta();
+            }
+        }
+
+        // Shuffle & Reset Button Handlers
+        document.getElementById('btnShuffle').addEventListener('click', () => {
+            shuffleTiles();
+            Sound.swap();
         });
 
-        renderGrid();
+        document.getElementById('btnReset').addEventListener('click', () => {
+            stopTimer();
+            initTiles();
+            selectedTileIndex = null;
+            moves = 0;
+            movesEl.textContent = '0';
+            timerSeconds = 0;
+            timerEl.textContent = '00:00';
+            isGameSolved = true;
+            statusEl.textContent = i18n[currentLang].statusSolved;
+            statusEl.style.color = 'var(--pop-green)';
+            polaroidStampBadgeEl.textContent = i18n[currentLang].stampPerfect;
+            polaroidStampBadgeEl.className = 'polaroid-stamp perfect-fit';
+            Sound.lock();
+            renderBoard();
+            updatePolaroidMeta();
+        });
+
+        // Grid Size Handlers
+        const btnGrid3 = document.getElementById('btnGrid3');
+        const btnGrid4 = document.getElementById('btnGrid4');
+
+        btnGrid3.addEventListener('click', () => {
+            if (gridSize === 3) return;
+            gridSize = 3;
+            btnGrid3.classList.add('active');
+            btnGrid4.classList.remove('active');
+            initTiles();
+            shuffleTiles();
+        });
+
+        btnGrid4.addEventListener('click', () => {
+            if (gridSize === 4) return;
+            gridSize = 4;
+            btnGrid4.classList.add('active');
+            btnGrid3.classList.remove('active');
+            initTiles();
+            shuffleTiles();
+        });
+
+        // Photo Preset Buttons
+        const presetBtns = document.querySelectorAll('.btn-preset[data-img]');
+        presetBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                presetBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentImgSrc = btn.getAttribute('data-img');
+                currentPhotoTitle = btn.textContent.trim().toUpperCase();
+                initTiles();
+                shuffleTiles();
+            });
+        });
+
+        // Custom File Upload
+        const customUploadInput = document.getElementById('customImgUpload');
+        customUploadInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                currentImgSrc = event.target.result;
+                currentPhotoTitle = file.name.substring(0, 16).toUpperCase();
+                presetBtns.forEach(b => b.classList.remove('active'));
+                initTiles();
+                shuffleTiles();
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // ==========================================
+        // 5. Retro Polaroid Canvas Generator & Downloader
+        // ==========================================
+        const btnDownloadPolaroid = document.getElementById('btnDownloadPolaroid');
+        const canvas = document.getElementById('polaroidExportCanvas');
+
+        btnDownloadPolaroid.addEventListener('click', () => {
+            const ctx = canvas.getContext('2d');
+            const cardW = 800;
+            const cardH = 960;
+            canvas.width = cardW;
+            canvas.height = cardH;
+
+            // Background of Polaroid: Crisp off-white paper
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, cardW, cardH);
+
+            // Bold 8px Black Border around Polaroid Card
+            ctx.lineWidth = 8;
+            ctx.strokeStyle = '#000000';
+            ctx.strokeRect(4, 4, cardW - 8, cardH - 8);
+
+            // Top Yellow Masking Tape
+            ctx.save();
+            ctx.fillStyle = '#FFDE59';
+            ctx.fillRect(cardW / 2 - 200, 14, 400, 36);
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = '#000000';
+            ctx.strokeRect(cardW / 2 - 200, 14, 400, 36);
+            ctx.fillStyle = '#000000';
+            ctx.font = '900 16px monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('JIGSHARE • POP ART EDITION', cardW / 2, 38);
+            ctx.restore();
+
+            // Photo frame (square)
+            const photoX = 48;
+            const photoY = 70;
+            const photoSize = cardW - 96;
+
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = () => {
+                // Draw photo
+                ctx.drawImage(img, photoX, photoY, photoSize, photoSize);
+
+                // Black 6px border around photo
+                ctx.lineWidth = 6;
+                ctx.strokeStyle = '#000000';
+                ctx.strokeRect(photoX, photoY, photoSize, photoSize);
+
+                // Vintage Stamp in Bottom Right of Photo
+                ctx.save();
+                ctx.translate(photoX + photoSize - 120, photoY + photoSize - 50);
+                ctx.rotate(-10 * Math.PI / 180);
+                ctx.fillStyle = '#FF3131';
+                ctx.fillRect(-80, -25, 180, 48);
+                ctx.strokeStyle = '#000000';
+                ctx.lineWidth = 4;
+                ctx.strokeRect(-80, -25, 180, 48);
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '900 16px monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText(polaroidStampBadgeEl.textContent, 10, 5);
+                ctx.restore();
+
+                // Polaroid Bottom Meta
+                ctx.fillStyle = '#000000';
+                ctx.font = '900 28px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText(currentPhotoTitle, photoX, photoY + photoSize + 46);
+
+                ctx.font = '700 18px monospace';
+                ctx.fillStyle = '#333333';
+                const stats = `GRID: ${gridSize}×${gridSize}  |  MOVES: ${moves}  |  TIME: ${formatTime(timerSeconds)}`;
+                ctx.fillText(stats, photoX, photoY + photoSize + 80);
+                const today = new Date().toISOString().split('T')[0];
+                ctx.fillText(`DATE: ${today}  |  App Store ID: 6760682088`, photoX, photoY + photoSize + 110);
+
+                // Barcode on bottom right
+                ctx.fillStyle = '#000000';
+                const bcX = cardW - 180;
+                const bcY = photoY + photoSize + 40;
+                const pattern = [3, 1, 4, 1, 2, 5, 2, 1, 3, 2, 4, 1, 3, 2, 1];
+                let currentBarX = bcX;
+                pattern.forEach(w => {
+                    ctx.fillRect(currentBarX, bcY, w * 2, 40);
+                    currentBarX += w * 2 + 3;
+                });
+                ctx.font = '800 12px monospace';
+                ctx.textAlign = 'left';
+                ctx.fillText('#JIG-6760682088', bcX, bcY + 60);
+
+                // Trigger download
+                const link = document.createElement('a');
+                link.download = `JigShare_Polaroid_${Date.now()}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            };
+            img.src = currentImgSrc;
+        });
+
+        // Initial setup
+        initTiles();
+        shuffleTiles();
     </script>
 </body>
 </html>

@@ -3,77 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - JigShare</title>
+    <title>Terms of Service - JigShare: Photo Jigsaw Puzzle</title>
+    <meta name="description" content="Official Terms of Service for JigShare: Photo Jigsaw Puzzle on iOS. Rules governing user content, 7-day challenge retention, and fair play.">
+    <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header>
-            <a href="index.html" class="logo">
-                <img src="assets/icon.png" alt="JigShare Logo">
-                <span>JigShare</span>
+            <a href="index.html" class="nav-brand">
+                <div class="logo-wrap">
+                    <img src="assets/icon.png" alt="JigShare Logo" class="logo-img">
+                </div>
+                <div>
+                    <span class="logo-title">JigShare</span>
+                    <span class="version-pill">Terms & Service</span>
+                </div>
             </a>
+
             <nav>
                 <ul>
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                    <li><a href="mailto:fangdev1063@gmail.com">Support</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#demo-lab">Play Demo</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="mailto:fangdev1063@gmail.com">Contact Support</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-icon-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+                    <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+                </button>
+            </div>
         </header>
 
         <section class="content-page">
             <h1>Terms of Service</h1>
-            
+            <p style="font-weight: 700; color: var(--text-muted);">Last Updated: September 15, 2026 · Effective for JigShare iOS (v1.0.3+)</p>
+
             <div class="content-block pop-card">
                 <h2>1. Acceptance of Terms</h2>
-                <p>Welcome to JigShare. By using our app and website, you agree to comply with and be bound by these Terms of Service. Our mission is to provide a fun, safe, and social photo puzzle experience.</p>
+                <p>
+                    By downloading, accessing, or using <strong>JigShare: Photo Jigsaw Puzzle</strong> (the "App") or our official landing site, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.
+                </p>
             </div>
 
             <div class="content-block pop-card">
-                <h2>2. User Accounts & Privacy</h2>
-                <p>JigShare uses <strong>Firebase Auth</strong> with Apple Sign-In. You are responsible for the security of your account. We prioritize your privacy and do not sell or trade your data to third parties.</p>
-            </div>
-
-            <div class="content-block pop-card">
-                <h2>3. Content Sharing & Security (7-Day TTL)</h2>
-                <p>When you share a challenge, your content is handled with the following safeguards:</p>
+                <h2>2. User Content & Safety Guidelines (Guideline 1.2)</h2>
+                <p>
+                    JigShare permits users to create personalized jigsaw challenges using their own photographs. When uploading photos for cloud challenges or peer invitations:
+                </p>
                 <ul>
-                    <li><strong>7-Day Lifecycle:</strong> All shared challenges and associated photos are automatically deleted from our servers after <strong>7 days</strong>.</li>
-                    <li><strong>Safe Search Audit:</strong> To maintain a safe community, all shared images are automatically audited using the <strong>Google Cloud Vision API</strong>. Images containing inappropriate content (as per our automated standards) will be blocked.</li>
-                    <li><strong>Private-By-Default:</strong> Sharing is direct. We do not provide public feeds for your personal photos.</li>
+                    <li>You represent and warrant that you own or possess all necessary rights and permissions to use and share the uploaded images.</li>
+                    <li>You agree not to upload content that is illegal, defamatory, obscene, sexually explicit, promoting hate speech, or infringing upon any third party's intellectual property rights.</li>
+                    <li><strong>Automated AI SafeSearch Moderation:</strong> To ensure compliance with Apple App Store Safety Guidelines, all shared challenge images are automatically inspected by Google Cloud Vision API SafeSearch. Content flagged as non-compliant will be immediately blocked from delivery.</li>
                 </ul>
             </div>
 
             <div class="content-block pop-card">
-                <h2>4. Leaderboards & Fair Play</h2>
-                <p>To ensure a genuine competitive experience, we use cloud-side verification for leaderboard entries. Any attempts to manipulate game data or automate play may result in score removal or account suspension.</p>
+                <h2>3. Ephemeral Cloud Storage (7-Day Auto-Purge)</h2>
+                <p>
+                    JigShare is designed around ephemeral social sharing. Cloud-hosted challenge photos and game session data are retained on our servers for an automated maximum lifespan of <strong>7 days</strong>. After 7 days, cloud challenge records and photos are permanently purged. We are not responsible for backing up user-uploaded challenge media.
+                </p>
             </div>
 
             <div class="content-block pop-card">
-                <h2>5. Disclaimer & Limitation of Liability</h2>
-                <p>JigShare is provided "as is". We are not liable for any data loss, service interruptions, or content generated by users during social play.</p>
+                <h2>4. Fair Play, Leaderboards & Anti-Cheat</h2>
+                <p>
+                    JigShare features competitive completion timers and skill points. Players must not exploit software vulnerabilities, reverse-engineer game binaries, or employ automated macros or scripts. We reserve the right to remove invalid scores or ban accounts that disrupt the integrity of community leaderboards.
+                </p>
             </div>
 
             <div class="content-block pop-card">
-                <h2>6. Contact Us</h2>
-                <p>Questions about our terms? Reach out to us at <a href="mailto:fangdev1063@gmail.com" style="color: var(--secondary);">fangdev1063@gmail.com</a>.</p>
+                <h2>5. Apple Licensed Application End User License Agreement (EULA)</h2>
+                <p>
+                    These Terms supplement Apple's Standard Licensed Application End User License Agreement (EULA). In the event of a conflict between these Terms and Apple's Standard EULA, these Terms shall control with respect to JigShare's specific features and ephemeral cloud services.
+                </p>
+            </div>
+
+            <div class="content-block pop-card">
+                <h2>6. Disclaimer of Warranties & Limitation of Liability</h2>
+                <p>
+                    The App is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind. To the maximum extent permitted by applicable law, the developers of JigShare disclaim all warranties, express or implied, including fitness for a particular purpose and uninterrupted service availability.
+                </p>
+            </div>
+
+            <div class="content-block pop-card">
+                <h2>7. Inquiries & Legal Contact</h2>
+                <p>
+                    For inquiries regarding these Terms of Service or intellectual property notices, please reach out to:
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Developer Contact:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--pop-red); font-weight: 800;">fangdev1063@gmail.com</a><br>
+                    <strong>Apple App Store Connect ID:</strong> <code>6760682088</code>
+                </p>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
-            <div class="logo footer-logo">
-                <img src="assets/icon.png" alt="JigShare Logo">
-                <span>JigShare (拼图快传)</span>
+            <div class="nav-brand">
+                <img src="assets/icon.png" alt="JigShare Logo" class="logo-img" style="width: 44px; height: 44px;">
+                <span class="logo-title" style="font-size: 1.5rem;">JigShare (拼图快传)</span>
             </div>
-            <div class="footer-links">
+
+            <div class="footer-nav">
                 <a href="index.html">Home</a>
+                <a href="index.html#demo-lab">Play Demo</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="mailto:fangdev1063@gmail.com">Contact Support</a>
+                <a href="app-ads.txt">app-ads.txt</a>
+                <a href="mailto:fangdev1063@gmail.com">Support</a>
             </div>
-            <p>&copy; 2026 JigShare. All rights reserved.</p>
+
+            <div class="footer-meta">
+                <p>&copy; 2026 JigShare: Photo Jigsaw Puzzle · All rights reserved.</p>
+                <p>Apple App Store ID: <strong>6760682088</strong> · Support: <strong>fangdev1063@gmail.com</strong></p>
+            </div>
         </footer>
     </div>
+
+    <!-- Theme Sync Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark';
+            }
+            localStorage.setItem('jigshare_theme', theme);
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        const savedTheme = localStorage.getItem('jigshare_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+    </script>
 </body>
 </html>
