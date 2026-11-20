@@ -1,0 +1,56 @@
+# JigShare: Photo Jigsaw Puzzle
+
+> Free offline iOS & iPadOS game that turns personal camera roll photos into Pop Art jigsaw puzzles, featuring a Daily Pop Puzzle streak calendar, tactile ASMR sound, Polaroid victory cards, Siri Shortcuts, and social friend challenges.
+
+JigShare is an iPhone and iPad photo jigsaw puzzle game that turns personal camera roll memories into bold Pop Art puzzles — playable 100% offline with zero mandatory sign-up.
+
+## Key features
+
+- Instant Photo-to-Puzzle Maker: Pick any picture from your camera roll or curated Pop Art packs to generate custom jigsaw boards from 2x2 up to 6x6 grids.
+- Daily Pop Puzzle and 14-Day Streak Calendar: Solve a fresh featured puzzle every day (relaxing 3x3 on weekdays, 4x4 on weekends), track your 14-day streak, and earn bonus skill points.
+- Retro Polaroid Victory Cards: Export crisp 3x Retina Pop Art Polaroid postcards stamped with your finish time, grid size, and collectible badges (Speed Demon, Zen Master, Upside Down, Perfect Fit).
+- Tactile Procedural ASMR Audio: Zero-latency synthesized sound feedback for piece picks, swaps, locks, flips, and victories that mixes cleanly with your background music or podcasts.
+- Siri Shortcuts and Spotlight Ready: Ask Siri or search Spotlight to jump straight into Today's Daily Pop Puzzle or your Streak Calendar.
+- Social Multi-Stage Challenges: Package single photos or multi-level puzzle gauntlets with 180-degree flip mechanics to challenge friends via link or .jig file share.
+- Instant Guest Mode: Play all offline puzzle modes and daily challenges immediately with no account required.
+- Private On-Device Processing: Local photo puzzles never leave your device. Optional cloud challenges are screened by AI SafeSearch moderation and automatically expire after 7 days.
+
+## Facts
+
+- Category: Games
+- Platform: iPhone / iPad
+- Price: 0
+
+## Links
+
+- [Download on the App Store](https://apps.apple.com/app/id6760682088)
+- [Official website](https://jigsawphoto.netlify.app/)
+- [Privacy policy](https://jigsawphoto.netlify.app/privacy)
+- [Terms of use](https://jigsawphoto.netlify.app/terms)
+- [Support](https://jigsawphoto.netlify.app)
+
+## FAQ
+
+### Can I turn my own iPhone camera roll photos into custom jigsaw puzzles offline?
+
+Yes. JigShare converts any photo from your iPhone or iPad library into a custom Pop Art jigsaw puzzle from 2x2 up to 6x6 grids completely on-device, working 100% offline in Guest Mode with no account registration required.
+
+### Is JigShare free to play and are there any subscriptions or paywalls?
+
+JigShare is 100% free to download and play with zero subscriptions or In-App Purchases. Players earn free daily skill points by solving puzzles, with optional user-initiated rewarded videos if extra hint tools are desired.
+
+### How do multiplayer photo puzzle challenges work with friends?
+
+You can package one photo or a multi-level gauntlet with custom grid sizes and 180-degree piece rotation into a challenge link or portable .jig file so friends can race against your exact completion time.
+
+### What is the Daily Pop Puzzle and Polaroid victory card feature?
+
+Every day JigShare generates a deterministic Pop Art puzzle (3x3 on weekdays, 4x4 on weekends) tracked on a 14-day streak calendar, and lets you export a 3x Retina retro Polaroid card stamped with your finish time and achievement badge.
+
+### Are my personal photos uploaded to the cloud when I play solo?
+
+No. Solo puzzles and Polaroid victory cards are processed and stored strictly on your device. Images are only uploaded when you explicitly send a cloud challenge to friends, screened by AI SafeSearch and automatically deleted after 7 days.
+
+### Which devices, Apple Shortcuts, and languages does JigShare support?
+
+JigShare runs natively on iPhone, iPad, and unfolded iPhone Duo (iOS 17.0+), integrates with Siri Shortcuts and Spotlight search, and ships with full localization in 9 languages: English, Simplified/Traditional Chinese, Japanese, Korean, German, French, Spanish, and Portuguese.

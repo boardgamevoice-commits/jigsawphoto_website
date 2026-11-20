@@ -21,7 +21,95 @@
 
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="apple-touch-icon" href="assets/icon.png">
+    <meta name="apple-itunes-app" content="app-id=6760682088">
     <link rel="stylesheet" href="index.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MobileApplication",
+          "name": "JigShare: Photo Jigsaw Puzzle",
+          "description": "JigShare is an iPhone and iPad photo jigsaw puzzle game that turns personal camera roll memories into bold Pop Art puzzles — playable 100% offline with zero mandatory sign-up.",
+          "operatingSystem": "iOS",
+          "applicationCategory": "GameApplication",
+          "inLanguage": ["en-US", "zh-Hans", "zh-Hant", "ja", "ko", "de-DE", "fr-FR", "es-MX", "pt-BR"],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+          },
+          "softwareVersion": "1.0.5",
+          "downloadUrl": "https://apps.apple.com/app/id6760682088",
+          "installUrl": "https://apps.apple.com/app/id6760682088",
+          "url": "https://jigsawphoto.netlify.app/",
+          "image": "https://jigsawphoto.netlify.app/assets/icon.png",
+          "author": {
+            "@type": "Organization",
+            "name": "DevFang"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I turn my own iPhone camera roll photos into custom jigsaw puzzles offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. JigShare converts any photo from your iPhone or iPad library into a custom Pop Art jigsaw puzzle from 2x2 up to 6x6 grids completely on-device, working 100% offline in Guest Mode with no account registration required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is JigShare free to play and are there any subscriptions or paywalls?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "JigShare is 100% free to download and play with zero subscriptions or In-App Purchases. Players earn free daily skill points by solving puzzles, with optional user-initiated rewarded videos if extra hint tools are desired."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do multiplayer photo puzzle challenges work with friends?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can package one photo or a multi-level gauntlet with custom grid sizes and 180-degree piece rotation into a challenge link or portable .jig file so friends can race against your exact completion time."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the Daily Pop Puzzle and Polaroid victory card feature?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every day JigShare generates a deterministic Pop Art puzzle (3x3 on weekdays, 4x4 on weekends) tracked on a 14-day streak calendar, and lets you export a 3x Retina retro Polaroid card stamped with your finish time and achievement badge."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are my personal photos uploaded to the cloud when I play solo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Solo puzzles and Polaroid victory cards are processed and stored strictly on your device. Images are only uploaded when you explicitly send a cloud challenge to friends, screened by AI SafeSearch and automatically deleted after 7 days."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which devices, Apple Shortcuts, and languages does JigShare support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "JigShare runs natively on iPhone, iPad, and unfolded iPhone Duo (iOS 17.0+), integrates with Siri Shortcuts and Spotlight search, and ships with full localization in 9 languages: English, Simplified/Traditional Chinese, Japanese, Korean, German, French, Spanish, and Portuguese."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -33,7 +121,7 @@
                 </div>
                 <div>
                     <span class="logo-title">JigShare</span>
-                    <span class="version-pill">v1.0.3 · iOS 17+</span>
+                    <span class="version-pill">v1.0.5 · iOS 17+</span>
                 </div>
             </a>
 
@@ -42,6 +130,7 @@
                     <li><a href="#demo-lab" data-i18n="navDemo">Play Demo</a></li>
                     <li><a href="#features" data-i18n="navFeatures">Features</a></li>
                     <li><a href="#daily-mode" data-i18n="navDaily">Daily Puzzle</a></li>
+                    <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
                     <li><a href="privacy.html" data-i18n="navPrivacy">Privacy</a></li>
                     <li><a href="terms.html" data-i18n="navTerms">Terms</a></li>
                 </ul>
@@ -66,7 +155,7 @@
             <div class="hero-content">
                 <div class="hero-tag">
                     <span>⚡</span>
-                    <span data-i18n="heroTag">Pop Art Picture Challenges · v1.0.3</span>
+                    <span data-i18n="heroTag">Pop Art Picture Challenges · v1.0.5</span>
                 </div>
                 <h1>
                     <span data-i18n="heroTitlePart1">Snap. Swap.</span><br>
@@ -298,6 +387,42 @@
             </div>
         </section>
 
+        <!-- Frequently Asked Questions (GEO & User Guide) -->
+        <section class="section-wrapper faq" id="faq">
+            <div class="section-head">
+                <div class="section-tag" data-i18n="faqTag">Answers & Details</div>
+                <h2 class="section-title" data-i18n="faqHeader">Frequently Asked Questions</h2>
+                <p class="section-subtitle" data-i18n="faqSubtitle">Everything you need to know about offline photo puzzles, privacy, Siri Shortcuts, and multiplayer challenges.</p>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item" open>
+                    <summary data-i18n="faqQ1">Can I turn my own iPhone camera roll photos into custom jigsaw puzzles offline?</summary>
+                    <p data-i18n="faqA1">Yes. JigShare converts any photo from your iPhone or iPad library into a custom Pop Art jigsaw puzzle from 2x2 up to 6x6 grids completely on-device, working 100% offline in Guest Mode with no account registration required.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faqQ2">Is JigShare free to play and are there any subscriptions or paywalls?</summary>
+                    <p data-i18n="faqA2">JigShare is 100% free to download and play with zero subscriptions or In-App Purchases. Players earn free daily skill points by solving puzzles, with optional user-initiated rewarded videos if extra hint tools are desired.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faqQ3">How do multiplayer photo puzzle challenges work with friends?</summary>
+                    <p data-i18n="faqA3">You can package one photo or a multi-level gauntlet with custom grid sizes and 180-degree piece rotation into a challenge link or portable .jig file so friends can race against your exact completion time.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faqQ4">What is the Daily Pop Puzzle and Polaroid victory card feature?</summary>
+                    <p data-i18n="faqA4">Every day JigShare generates a deterministic Pop Art puzzle (3x3 on weekdays, 4x4 on weekends) tracked on a 14-day streak calendar, and lets you export a 3x Retina retro Polaroid card stamped with your finish time and achievement badge.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faqQ5">Are my personal photos uploaded to the cloud when I play solo?</summary>
+                    <p data-i18n="faqA5">No. Solo puzzles and Polaroid victory cards are processed and stored strictly on your device. Images are only uploaded when you explicitly send a cloud challenge to friends, screened by AI SafeSearch and automatically deleted after 7 days.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faqQ6">Which devices, Apple Shortcuts, and languages does JigShare support?</summary>
+                    <p data-i18n="faqA6">JigShare runs natively on iPhone, iPad, and unfolded iPhone Duo (iOS 17.0+), integrates with Siri Shortcuts and Spotlight search, and ships with full localization in 9 languages: English, Simplified/Traditional Chinese, Japanese, Korean, German, French, Spanish, and Portuguese.</p>
+                </details>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer>
             <div class="nav-brand">
@@ -335,12 +460,13 @@
                 navDemo: "Play Demo",
                 navFeatures: "Features",
                 navDaily: "Daily Puzzle",
+                navFaq: "FAQ",
                 navPrivacy: "Privacy",
                 navTerms: "Terms",
                 navDownload: "App Store",
                 navHome: "Home",
                 navSupport: "Support",
-                heroTag: "Pop Art Picture Challenges · v1.0.3",
+                heroTag: "Pop Art Picture Challenges · v1.0.5",
                 heroTitlePart1: "Snap. Swap.",
                 heroTitlePart2: "POP ART MAGIC.",
                 heroSubtitle: "Turn your favourite camera photos into instant Pop Art jigsaw puzzles! Play the brand-new Daily Puzzle streak, swap pieces with tactile ASMR sound, and export collectible retro Polaroid cards.",
@@ -372,7 +498,7 @@
                 stampSpeed: "SPEED DEMON",
                 stampDaily: "DAILY SOLVER",
                 btnSavePolaroid: "Save Retro Polaroid Postcard",
-                dailyTag: "v1.0.3 Major Feature",
+                dailyTag: "v1.0.5 Core Feature",
                 dailyTitle: "Daily Brain Gym & Streak Calendar",
                 dailyDesc: "Never run out of inspiration. Every single midnight, JigShare drops an exclusive daily featured puzzle. Solve it, rack up your consecutive streak calendar, earn bonus skill points, and share your personalized daily postcard with friends!",
                 streakTitle: "SEPTEMBER 2026 STREAK",
@@ -391,18 +517,34 @@
                 f5Title: "Retro Polaroid Export",
                 f5Desc: "Every completed puzzle turns into an exclusive high-resolution Pop Art Polaroid card, complete with completion stats and souvenir stamps.",
                 f6Title: "Guest Mode & AI Safety",
-                f6Desc: "Zero forced account creation. Cloud challenge photos are audited by Google Cloud Vision AI SafeSearch and auto-deleted after 7 days."
+                f6Desc: "Zero forced account creation. Cloud challenge photos are audited by Google Cloud Vision AI SafeSearch and auto-deleted after 7 days.",
+                faqTag: "Answers & Details",
+                faqHeader: "Frequently Asked Questions",
+                faqSubtitle: "Everything you need to know about offline photo puzzles, privacy, Siri Shortcuts, and multiplayer challenges.",
+                faqQ1: "Can I turn my own iPhone camera roll photos into custom jigsaw puzzles offline?",
+                faqA1: "Yes. JigShare converts any photo from your iPhone or iPad library into a custom Pop Art jigsaw puzzle from 2x2 up to 6x6 grids completely on-device, working 100% offline in Guest Mode with no account registration required.",
+                faqQ2: "Is JigShare free to play and are there any subscriptions or paywalls?",
+                faqA2: "JigShare is 100% free to download and play with zero subscriptions or In-App Purchases. Players earn free daily skill points by solving puzzles, with optional user-initiated rewarded videos if extra hint tools are desired.",
+                faqQ3: "How do multiplayer photo puzzle challenges work with friends?",
+                faqA3: "You can package one photo or a multi-level gauntlet with custom grid sizes and 180-degree piece rotation into a challenge link or portable .jig file so friends can race against your exact completion time.",
+                faqQ4: "What is the Daily Pop Puzzle and Polaroid victory card feature?",
+                faqA4: "Every day JigShare generates a deterministic Pop Art puzzle (3x3 on weekdays, 4x4 on weekends) tracked on a 14-day streak calendar, and lets you export a 3x Retina retro Polaroid card stamped with your finish time and achievement badge.",
+                faqQ5: "Are my personal photos uploaded to the cloud when I play solo?",
+                faqA5: "No. Solo puzzles and Polaroid victory cards are processed and stored strictly on your device. Images are only uploaded when you explicitly send a cloud challenge to friends, screened by AI SafeSearch and automatically deleted after 7 days.",
+                faqQ6: "Which devices, Apple Shortcuts, and languages does JigShare support?",
+                faqA6: "JigShare runs natively on iPhone, iPad, and unfolded iPhone Duo (iOS 17.0+), integrates with Siri Shortcuts and Spotlight search, and ships with full localization in 9 languages: English, Simplified/Traditional Chinese, Japanese, Korean, German, French, Spanish, and Portuguese."
             },
             zh: {
                 navDemo: "在线试玩",
                 navFeatures: "特色玩法",
                 navDaily: "每日打卡",
+                navFaq: "常见问题",
                 navPrivacy: "隐私政策",
                 navTerms: "服务条款",
                 navDownload: "前往下载",
                 navHome: "首页",
                 navSupport: "技术支持",
-                heroTag: "复古波普艺术照片拼图 · v1.0.3 全新升级",
+                heroTag: "复古波普艺术照片拼图 · v1.0.5 全球 9 语种升级",
                 heroTitlePart1: "拍照. 点触换位.",
                 heroTitlePart2: "波普艺术魔法.",
                 heroSubtitle: "把相册照片秒变超酷的波普艺术拼图！全新每日拼图打卡连胜上线，伴随清脆程序化 ASMR 音效指尖换位，通关即可导出专属复古拍立得打卡卡片。",
@@ -434,7 +576,7 @@
                 stampSpeed: "极速挑战者",
                 stampDaily: "每日解谜达人",
                 btnSavePolaroid: "一键导出复古拍立得明信片",
-                dailyTag: "v1.0.3 重磅核心玩法",
+                dailyTag: "v1.0.5 核心玩法",
                 dailyTitle: "每日脑力健身房与连胜日历",
                 dailyDesc: "每天午夜零点，JigShare 精准推送一张全新每日特色拼图。解开谜题，在连胜日历上点亮连续打卡记录，赢取丰厚技能点奖励，一键向好友晒出属于你的每日专属战报！",
                 streakTitle: "2026 年 9 月 连续打卡日历",
@@ -453,7 +595,22 @@
                 f5Title: "复古拍立得打卡卡片",
                 f5Desc: "通关瞬间生成超清复古拍立得打卡卡片，印有通关时间、步数、专属纪念邮戳与条形码，一键保存至相册。",
                 f6Title: "全本地游客模式与安全",
-                f6Desc: "无需强制登录即可单机畅玩。云端挑战图片经由 Google Cloud Vision API 严格 AI 安全审核，并在 7 天后自动销毁。"
+                f6Desc: "无需强制登录即可单机畅玩。云端挑战图片经由 Google Cloud Vision API 严格 AI 安全审核，并在 7 天后自动销毁。",
+                faqTag: "功能与隐私解答",
+                faqHeader: "常见问题解答 (FAQ)",
+                faqSubtitle: "关于离线照片拼图、隐私安全、Siri 快捷指令与好友竞速挑战的完整说明。",
+                faqQ1: "可以把 iPhone 相册里的个人照片离线做成自定义拼图吗？",
+                faqA1: "可以。JigShare 支持免注册访客模式 100% 离线畅玩，可从 iPhone 或 iPad 相册任选照片生成 2x2 至 6x6 网格的波普艺术拼图，所有单机照片均在本地设备端离线处理。",
+                faqQ2: "JigShare 需要付费订阅或内购解锁吗？",
+                faqA2: "完全免费，无任何付费订阅或内购项目。玩家每天可通过通关获取免费技能点，也可按需自主选择观看激励视频补充透视原图或魔法提示道具。",
+                faqQ3: "如何把旅行合照做成拼图发给朋友比拼通关速度？",
+                faqA3: "选择单张或多张照片设定网格与 180 度碎片翻转规则后，即可生成挑战链接或 .jig 挑战包文件发送给好友，系统会自动记录双方的通关耗时排名。",
+                faqQ4: "每日波普拼图和复古拍立得战报卡片是什么？",
+                faqA4: "应用每天生成全球一致的精选波普拼图（工作日 3x3，周末 4x4）并记录 14 天连胜日历；每次通关均可一键导出印有耗时与专属荣誉印章的 3x 超清复古拍立得纪念卡。",
+                faqQ5: "单机游玩时我的个人照片会上传到云端吗？",
+                faqA5: "绝不会。单机拼图与拍立得纪念卡严格在本地设备沙盒内处理与存储；仅在您主动向好友发起云端挑战时才会传输图片，且经 AI 安全审查后在 7 天后自动销毁。",
+                faqQ6: "支持哪些设备、Siri 快捷指令与多国语言？",
+                faqA6: "原生适配 iPhone、iPad 与 iPhone Duo 折叠双屏（iOS 17.0+），接入 Siri 快捷指令与 Spotlight 搜索，并内置简繁中文、英、日、韩、德、法、西、葡共 9 种语言即时切换。"
             }
         };
 

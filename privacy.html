@@ -40,7 +40,7 @@
 
         <section class="content-page">
             <h1>Privacy Policy</h1>
-            <p style="font-weight: 700; color: var(--text-muted);">Last Updated: September 15, 2026 · Effective for JigShare iOS (v1.0.3+)</p>
+            <p style="font-weight: 700; color: var(--text-muted);">Last Updated: November 20, 2026 · Effective for JigShare iOS (v1.0.5+)</p>
 
             <div class="content-block pop-card">
                 <h2>1. Our Privacy Philosophy: Privacy First & Local Execution</h2>
@@ -55,7 +55,7 @@
                     When selecting images from your camera roll or snapping new pictures within the app:
                 </p>
                 <ul>
-                    <li><strong>On-Device Slicing:</strong> Photos are segmented into grid pieces entirely within local device memory using CoreGraphics and Metal. Raw photo data is never uploaded to any remote server for standard local play.</li>
+                    <li><strong>On-Device Slicing &amp; Sandbox Backup Exclusion:</strong> Photos are segmented into grid pieces entirely within local device memory using CoreGraphics and Metal. Local puzzle history, cached thumbnails, and temporary <code>.jig</code> files are stored inside the app sandbox with <code>isExcludedFromBackup = true</code> so temporary captures do not bloat your iCloud Backup. Exporting Polaroid cards requests minimal <code>.addOnly</code> Photo Library write permission.</li>
                     <li><strong>Apple Privacy Manifest Declaration:</strong> In compliance with Apple's iOS 17+ Privacy Manifest guidelines (<code>PrivacyInfo.xcprivacy</code>), we access required APIs strictly for non-tracking system operations:
                         <ul>
                             <li><code>UserDefaults</code> (CA92.1): Preserving your game sound preference, daily streak counter, and unlocked difficulty levels locally.</li>
@@ -81,7 +81,7 @@
             <div class="content-block pop-card">
                 <h2>4. Google Mobile Ads (AdMob) & App Tracking Transparency (ATT)</h2>
                 <p>
-                    JigShare uses Google Mobile Ads SDK (v13.9.0) to display occasional banner and reward advertisements that support free gameplay:
+                    JigShare uses Google Mobile Ads SDK (v13.12.0+) and Google User Messaging Platform (UMP) to offer optional user-initiated rewarded videos that support free gameplay:
                 </p>
                 <ul>
                     <li><strong>Explicit ATT Consent Prompt:</strong> In accordance with Apple's App Tracking Transparency (ATT) framework, JigShare asks for your explicit permission before any advertising tracking occurs. If you choose "Ask App not to Track", Google Mobile Ads will strictly serve contextual, non-personalized advertisements.</li>
